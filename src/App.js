@@ -1,7 +1,8 @@
-import './App.css';
+import "./App.css";
 import AppNavBar from './components/AppNavBar';
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
+import LogoutPage from "./pages/LogoutPage";
 import RegisterPage from "./pages/RegisterPage";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
@@ -45,6 +46,7 @@ function App() {
         <Routes>
           <Route element={<HomePage />} path="/" />
           <Route element={<LoginPage />} path="/login" />
+          <Route element={<LogoutPage />} path="/logout" />
           <Route element={<RegisterPage />} path="/register" />
         </Routes>
       </Router>
