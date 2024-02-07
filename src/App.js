@@ -4,6 +4,7 @@ import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import LogoutPage from "./pages/LogoutPage";
 import RegisterPage from "./pages/RegisterPage";
+import ErrorPage from "./pages/ErrorPage";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -45,6 +46,7 @@ function App() {
         <AppNavBar />
         <Routes>
           <Route element={<HomePage />} path="/" />
+          <Route element={<ErrorPage />} path="*" />
           <Route element={<LoginPage />} path="/login" />
           <Route element={<LogoutPage />} path="/logout" />
           <Route element={<RegisterPage />} path="/register" />
