@@ -4,7 +4,6 @@ import UserContext from '../UserContext';
 import { Navigate } from 'react-router-dom';
 
 const RegisterPage = () => {
-    // s60 activity
     const { user } = useContext(UserContext) || {};
 
     // State hooks to store values from input fields
@@ -36,7 +35,7 @@ const RegisterPage = () => {
 		// Prevents page redirection via form submission
 		e.preventDefault();
 
-		fetch(`${process.env.REACT_APP_API_URL}/users/register`, {
+		fetch(`${process.env.REACT_APP_API_URL}/users/`, {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json"
