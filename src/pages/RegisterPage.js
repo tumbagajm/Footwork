@@ -77,7 +77,7 @@ const RegisterPage = () => {
 	}
     return (
         (user.id !== null) ?
-			<Navigate to="/courses" />
+			<Navigate to="/products" />
 			:
 			<>
 				<Container className="my-3 p-5 w-50">
