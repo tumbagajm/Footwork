@@ -2,6 +2,7 @@ import { Form, Button, Container } from "react-bootstrap";
 import { useState, useEffect, useContext } from "react";
 import UserContext from '../UserContext';
 import { Navigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const RegisterPage = () => {
     const { user } = useContext(UserContext) || {};
@@ -60,9 +61,17 @@ const RegisterPage = () => {
 					setPassword("");
 					setConfirmPassword("");
 
-					alert(data.message);
+					Swal.fire({
+                        icon: 'success',
+                        title: 'Registration Successful',
+                        text: data.message,
+                    });
 				} else{
-					alert(data.error);
+					Swal.fire({
+                        icon: 'error',
+                        title: 'Registration Failed',
+                        text: data.error,
+                    });
 				}
 			})
 	}
