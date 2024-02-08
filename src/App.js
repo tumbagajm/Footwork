@@ -35,6 +35,8 @@ function App() {
           id: data._id,
           email: data.email,
           isAdmin: data.isAdmin,
+          firstName: data.firstName,
+          lastName: data.lastName
         });
       });
     }

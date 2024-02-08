@@ -1,44 +1,84 @@
-import { Container, Nav, Navbar } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
-import { useState, useContext } from "react";
+import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Link, NavLink } from "react-router-dom";
+import { useContext } from "react";
 import UserContext from "../UserContext";
+
+// Import FontAwesome
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+library.add(fas);
 
 const AppNavBar = () => {
 
-      const { user } = useContext(UserContext);
+    const { user } = useContext(UserContext);
+    
+	console.log(user); //For checking
 
-  return (
-    <Navbar expand="lg" className="bg-body-tertiary shadow">
-        <Container>
-            <Navbar.Brand as={NavLink} to="/"> ZUITT</Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="ms-auto">
-                    <Nav.Link as={NavLink} to="/">Home</Nav.Link>
+    return (
+        <Navbar expand="lg" className="bg-body-tertiary shadow">
+            <Container>
+                <Navbar.Brand as={NavLink} to="/"> ZUITT Shop</Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="ms-auto">
+                        <Nav.Link as={NavLink} to="/"><FontAwesomeIcon icon="fa-solid fa-house" /></Nav.Link>
+                        
+                        {/* Conditional Rendering if user is logged in */}
+                        {user.id !== null ? (
+                            user.isAdmin ? (
+                                <>
+                                    <NavDropdown title={<FontAwesomeIcon icon="fa-solid fa-user" />} id="basic-nav-dropdown">
+                                        <NavDropdown.Item as={Link} to="/Profile">
+                                            Admin Dashboard
+                                        </NavDropdown.Item>
 
-                    {/* Conditional Rendering if user is logged in */}
-                    {user.id !== null ? (
-                    user.isAdmin ? (
-                        <>
-                            <Nav.Link as={NavLink} to="/logout">Logout</Nav.Link>
-                        </>
-                    ) : (
-                        <>
-                        <Nav.Link as={NavLink} to="/profile">Profile</Nav.Link>
-                        <Nav.Link as={NavLink} to="/logout">Logout</Nav.Link>
-                        </>
-                    )
-                    ) : (
-                    <>
-                        <Nav.Link as={NavLink} to="/register">Register</Nav.Link>
-                        <Nav.Link as={NavLink} to="/login">Login</Nav.Link>
-                    </>
-                    )}
-                </Nav>
-            </Navbar.Collapse>
-        </Container>
-    </Navbar>
-  );
+                                        <NavDropdown.Divider />
+
+                                        <NavDropdown.Item as={Link} to="/logout" className = "text-danger">
+                                            Logout
+                                        </NavDropdown.Item>
+                                    </NavDropdown>
+                                </>
+                            ) 
+                            : 
+                            (
+                                <>
+                                    <Nav.Link as={NavLink} to="/cart"><FontAwesomeIcon icon="fa-solid fa-cart-shopping" /></Nav.Link>
+                                    <NavDropdown title={<FontAwesomeIcon icon="fa-solid fa-user" />} id="basic-nav-dropdown">
+                                        <NavDropdown.Item as={Link} to="/Profile">
+                                            Profile
+                                        </NavDropdown.Item>
+
+                                        <NavDropdown.Divider />
+
+                                        <NavDropdown.Item as={Link} to="/logout" className = "text-danger">
+                                            Logout
+                                        </NavDropdown.Item>
+                                    </NavDropdown>
+                                </>
+                            )
+                        ) 
+                        : 
+                        (
+                            <>  
+                                <NavDropdown title={<FontAwesomeIcon icon="fa-solid fa-user" />} id="basic-nav-dropdown">
+                                        <NavDropdown.Item as={NavLink} to="/register">
+                                            Register
+                                        </NavDropdown.Item>
+
+                                        <NavDropdown.Item as={NavLink} to="/login">
+                                            Login
+                                        </NavDropdown.Item>
+                                    </NavDropdown>
+                                
+                            </>
+                        )}
+                    </Nav>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar>
+    );
 }
 
 
