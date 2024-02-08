@@ -20,7 +20,6 @@ const ProductPage = () => {
         })
         .then((res) => res.json())
         .then((data) => {
-            console.log(data)
             const productArr = data.map((product) => {
             return product;
             });
