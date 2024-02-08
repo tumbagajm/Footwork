@@ -1,12 +1,9 @@
 import { Button, Modal, Form } from "react-bootstrap";
 import { useState } from "react";
 import Swal from "sweetalert2";
-import { useParams } from "react-router-dom";
 
 const UpdateProduct = ({ product, fetchData }) => {
     const [productId, setProductId] = useState("");
-    // const { productId } = useParams();
-
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
     const [price, setPrice] = useState(0);

@@ -1,38 +1,59 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;600;800;900&display=swap');
+
+
+:root {
+  --primary-brand-color: #D24545;
+  --secondary-brand-color: #E6BAA3;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  font-family: 'Poppins', sans-serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+span {
+  color: var(--primary-brand-color);
 }
 
-.App-link {
-  color: #61dafb;
+/* =================== NAVBAR ===================  */
+#navbar {
+  color: var(--primary-brand-color);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+/* =================== LOGIN ===================  */
+.login_box{
+  padding: 50px;
+}
+
+.img_box {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.img_box img {
+  height: 500px;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* =================== HERO ===================  */
+
+#hero button {
+  background-color: var(--primary-brand-color);
+}
+
+.hero_img {
+  height: 350px;
+  width: auto;
+  object-fit: contain;
 }

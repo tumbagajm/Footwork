@@ -14,13 +14,23 @@ const AppNavBar = () => {
     const { user } = useContext(UserContext);
 
     return (
-        <Navbar expand="lg" className="bg-body-tertiary shadow">
+        <Navbar id="navbar" expand="lg" className="bg-body-light">
             <Container>
-                <Navbar.Brand as={NavLink} to="/"> ZUITT Shop</Navbar.Brand>
+                <Navbar.Brand as={NavLink} to="/" className="fs-1 fw-bold d-lg-none">
+                    Foot<span>Work.</span>
+                </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="ms-auto">
-                        <Nav.Link as={NavLink} to="/"><FontAwesomeIcon icon="fa-solid fa-house" /></Nav.Link>
+                    <Nav className="d-flex justify-content-between align-items-center w-100">
+                        <Navbar.Brand as={NavLink} to="/" className="fs-1 fw-bold d-lg-block">
+                            Foot<span>Work.</span>
+                        </Navbar.Brand>
+                        <div className="d-flex gap-3 fs-5">
+                            <Nav.Link as={NavLink} to="/products">Products</Nav.Link>
+                            <Nav.Link as={NavLink} to="/about">About</Nav.Link>
+                            <Nav.Link as={NavLink} to="/contact">Contact Us</Nav.Link>
+                            {/* <Nav.Link as={NavLink} to="/"><FontAwesomeIcon icon="fa-solid fa-house" /></Nav.Link> */}
+                        </div>
                         
                         {/* Conditional Rendering if user is logged in */}
                         {user.id !== null ? (
@@ -30,9 +40,9 @@ const AppNavBar = () => {
                                         <NavDropdown.Item as={Link} to="/products">
                                             Admin Dashboard
                                         </NavDropdown.Item>
-                                        <Nav.Link as={NavLink} to="/addProduct">
+                                        <NavDropdown.Item as={NavLink} to="/addProduct">
                                             Add Product
-                                        </Nav.Link>
+                                        </NavDropdown.Item>
 
                                         <NavDropdown.Divider />
 
