@@ -2,9 +2,8 @@ import { Card, Button } from "react-bootstrap";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const ProductCard = (productProp) => {
+const ProductCard = ({productProp}) => {
     const { _id, name, description, price } = productProp;
-
   return (
     <>
         <Card className="p-3 my-3">
@@ -18,7 +17,7 @@ const ProductCard = (productProp) => {
             </Card.Body>
         </Card>
     </>
-  )
-}
+  );
+};
 
-export default ProductCard
+export default ProductCard;
