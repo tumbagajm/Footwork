@@ -5,6 +5,7 @@ import { Navigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const RegisterPage = () => {
+	document.title = "Register";
     const { user } = useContext(UserContext) || {};
 
     // State hooks to store values from input fields
