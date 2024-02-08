@@ -36,29 +36,29 @@ const AddProduct = () => {
             console.log(data);
 
             if (data.error === "Product Already exists.") {
-            Swal.fire({
-                icon: "error",
-                title: "Unsuccessful Product Creation",
-                text: data.error,
-            });
+                Swal.fire({
+                    icon: "error",
+                    title: "Unsuccessful Product Creation",
+                    text: data.error,
+                });
             } else if (data.message === "Product saved successfully!") {
-            Swal.fire({
-                icon: "success",
-                title: "Product Added",
-                text: data.message,
-            });
+                Swal.fire({
+                    icon: "success",
+                    title: "Product Added",
+                    text: data.message,
+                });
 
-            setName("");
-            setDescription("");
-            setPrice(0);
+                setName("");
+                setDescription("");
+                setPrice(0);
             } else {
-            Swal.fire({
-                title: "Something went wrong!",
-                icon: "error",
-                text: "There is a problem while adding the product.",
-            });
+                Swal.fire({
+                    title: "Something went wrong!",
+                    icon: "error",
+                    text: "There is a problem while adding the product.",
+                });
 
-            navigate("/products");
+                navigate("/products");
             }
         });
     };
