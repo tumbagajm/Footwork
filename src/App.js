@@ -52,8 +52,8 @@ function App() {
           <Route element={<LoginPage />} path="/login" />
           <Route element={<LogoutPage />} path="/logout" />
           <Route element={<RegisterPage />} path="/register" />
+          <Route element={<AddProduct />} path="/addProduct" />
           <Route element={<ProductPage />} path="/products" />
-          <Route element={<AddProduct />} path="/addProduct/" />
         </Routes>
       </Router>
     </UserProvider>

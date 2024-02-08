@@ -32,6 +32,9 @@ const AppNavBar = () => {
                                         <NavDropdown.Item as={Link} to="/">
                                             Admin Dashboard
                                         </NavDropdown.Item>
+                                        <Nav.Link as={NavLink} to="/addProduct">
+                                            Add Product
+                                        </Nav.Link>
 
                                         <NavDropdown.Divider />
 
