@@ -6,6 +6,7 @@ import LogoutPage from "./pages/LogoutPage";
 import RegisterPage from "./pages/RegisterPage";
 import ErrorPage from "./pages/ErrorPage";
 import ProductPage from "./pages/ProductPage";
+import AddProductPage from "./pages/AddProductPage";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -52,6 +53,7 @@ function App() {
           <Route element={<LogoutPage />} path="/logout" />
           <Route element={<RegisterPage />} path="/register" />
           <Route element={<ProductPage />} path="/products" />
+          <Route element={<AddProductPage />} path="/addProduct" />
         </Routes>
       </Router>
     </UserProvider>
