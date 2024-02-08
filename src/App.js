@@ -5,6 +5,7 @@ import LoginPage from "./pages/LoginPage";
 import LogoutPage from "./pages/LogoutPage";
 import RegisterPage from "./pages/RegisterPage";
 import ErrorPage from "./pages/ErrorPage";
+import ProductPage from "./pages/ProductPage";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -50,6 +51,7 @@ function App() {
           <Route element={<LoginPage />} path="/login" />
           <Route element={<LogoutPage />} path="/logout" />
           <Route element={<RegisterPage />} path="/register" />
+          <Route element={<ProductPage />} path="/products" />
         </Routes>
       </Router>
     </UserProvider>
