@@ -28,8 +28,6 @@ function App() {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-        console.log(data._id);
 
         setUser({
           id: data._id,

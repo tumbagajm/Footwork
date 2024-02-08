@@ -17,13 +17,6 @@ const RegisterPage = () => {
     // state management to enable and disable register button
     const [isActive, setIsActive] = useState(false);
 
-    console.log(firstName);
-    console.log(lastName);
-    console.log(email);
-    console.log(mobileNo);
-    console.log(password);
-    console.log(confirmPassword);
-
     useEffect(() => {
         if ((firstName !== "" && lastName !== "" && email !== "" && mobileNo !== "" && password !== "" && confirmPassword !== "") && (password === confirmPassword) && (mobileNo.length === 11)) {
             setIsActive(true);
@@ -51,7 +44,6 @@ const RegisterPage = () => {
 		})
 			.then(res => res.json())
 			.then(data => {
-				console.log(data);
 
 				if (data.message) {
 					setFirstName("");
