@@ -1,5 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import UserContext from "../UserContext";
+import AdminView from "../components/AdminView";
 
 const ProductPage = () => {
   const { user } = useContext(UserContext);
@@ -13,12 +14,12 @@ const ProductPage = () => {
     })
       .then((res) => res.json())
       .then((data) => {
+        console.log(data)
+        const productArr = data.map((product) => {
+          return product;
+        });
 
-        // const productArr = data.map((product) => {
-        //   return product;
-        // });
-
-        // setProducts(productArr);
+        setProducts(productArr);
       });
   };
 
@@ -29,6 +30,7 @@ const ProductPage = () => {
   return (
     <>
       <h1>Products</h1>
+      <AdminView productsData={products} fetchData={fetchData} />
 
     </>
   );
