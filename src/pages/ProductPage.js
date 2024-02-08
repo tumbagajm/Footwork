@@ -14,11 +14,11 @@ const ProductPage = () => {
       .then((res) => res.json())
       .then((data) => {
 
-        const productArr = data.map((product) => {
-          return product;
-        });
+        // const productArr = data.map((product) => {
+        //   return product;
+        // });
 
-        setProducts(productArr);
+        // setProducts(productArr);
       });
   };
 
