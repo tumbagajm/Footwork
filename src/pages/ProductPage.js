@@ -8,16 +8,11 @@ const ProductPage = () => {
 
     const { user } = useContext(UserContext);
     const [products, setProducts] = useState([]);
-    const [target, setTarget] = useState("all");
 
     console.log(user)
 
-    // let target = ""
-    // if(user.isAdmin){
-    //     // setTarget("all");
-    //     target = "all"
-    //     document.title = "Admin Dashboard";
-    // }
+    const target = user.isAdmin ? "all" : "";
+    document.title = user.isAdmin ? "Admin Dashboard" : "Products";
     
 
     const fetchData = () => {
@@ -39,9 +34,6 @@ const ProductPage = () => {
     
 
     useEffect(() => {
-        if(user.isAdmin){
-            setTarget("all");
-        }
         fetchData();
     }, []);
 
