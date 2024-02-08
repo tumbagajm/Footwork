@@ -1,9 +1,11 @@
 import { Button, Modal, Form } from "react-bootstrap";
 import { useState } from "react";
 import Swal from "sweetalert2";
+import { useParams } from "react-router-dom";
 
 const UpdateProduct = ({ product, fetchData }) => {
     const [productId, setProductId] = useState("");
+    // const { productId } = useParams();
 
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
@@ -16,18 +18,18 @@ const UpdateProduct = ({ product, fetchData }) => {
         setShowEdit(true);
 
         fetch(`${process.env.REACT_APP_API_URL}/products/${productId}`, {
+            method:"GET",
             headers: {
                 "Content-Type": "application/json",
-                Autorization: `Bearer ${localStorage.getItem("token")}`
+                Authorization: `Bearer ${localStorage.getItem("token")}`
             }
         })
         .then((res) => res.json())
         .then((data) => {
-            console.log(data)
-            // setProductId(data.product._id);
-            // setName(data.product.name);
-            // setDescription(data.product.description);
-            // setPrice(data.product.price);
+            setProductId(data.data._id);
+            setName(data.data.name);
+            setDescription(data.data.description);
+            setPrice(data.data.price);
         });
     };
 
@@ -57,24 +59,25 @@ const UpdateProduct = ({ product, fetchData }) => {
         .then((data) => {
             console.log(data);
 
-            if (data.message === "Product Updated successfully!") {
-            Swal.fire({
-                title: "Success!",
-                icon: "success",
-                text: "Product Successfully Updated",
-            });
+            if (data.message === "Product has been updated") {
+                Swal.fire({
+                    title: "Success!",
+                    icon: "success",
+                    text: "Product Successfully Updated",
+                });
 
-            closeEdit();
-            fetchData();
+                closeEdit();
+                fetchData();
+
             } else {
-            Swal.fire({
-                title: "Oh no!!",
-                icon: "error",
-                text: "Please try again!",
-            });
+                Swal.fire({
+                    title: "Oh no!!",
+                    icon: "error",
+                    text: "Please try again!",
+                });
 
-            closeEdit();
-            fetchData();
+                closeEdit();
+                fetchData();
             }
         });
     };
