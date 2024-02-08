@@ -27,7 +27,7 @@ const AppNavBar = () => {
                             user.isAdmin ? (
                                 <>
                                     <NavDropdown title={<FontAwesomeIcon icon="fa-solid fa-user" />} id="basic-nav-dropdown">
-                                        <NavDropdown.Item as={Link} to="/">
+                                        <NavDropdown.Item as={Link} to="/products">
                                             Admin Dashboard
                                         </NavDropdown.Item>
                                         <Nav.Link as={NavLink} to="/addProduct">

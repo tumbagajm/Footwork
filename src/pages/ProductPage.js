@@ -8,8 +8,10 @@ const ProductPage = () => {
     const [products, setProducts] = useState([]);
 
     let target = "";
+    document.title = "Products";
     if(user.isAdmin){
         target = "all";
+        document.title = "Admin Dashboard";
     }
 
     const fetchData = () => {
