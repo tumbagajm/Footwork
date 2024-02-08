@@ -2,6 +2,7 @@ import { Table, Container } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import ArchiveProduct from "./ArchiveProduct";
 import ActivateProduct from "./ActivateProduct";
+import UpdateProduct from "./UpdateProduct";
 
 const AdminView = ({ productsData, fetchData }) => {
     const [products, setProducts] = useState([]);
@@ -18,7 +19,7 @@ const AdminView = ({ productsData, fetchData }) => {
                         {product.isActive ? "Available" : "Unavailable"}
                     </td>
                     <td>
-                        {/* <Editproduct product={product._id} fetchData={fetchData} /> */}
+                        <UpdateProduct product={product._id} fetchData={fetchData} />
                     </td>
                     <td>
                         {

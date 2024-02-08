@@ -9,7 +9,7 @@ const ProductPage = () => {
     const { user } = useContext(UserContext);
     const [products, setProducts] = useState([]);
 
-    console.log(user)
+    // console.log(user)
 
     const target = user.isAdmin ? "all" : "";
     document.title = user.isAdmin ? "Admin Dashboard" : "Products";
