@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import UserContext from "../UserContext";
 import AdminView from "../components/AdminView";
+import UserView from "../components/UserView";
 import { Container } from "react-bootstrap";
 
 const ProductPage = () => {
@@ -35,9 +36,13 @@ const ProductPage = () => {
 
     return (
         <>
-            <Container>
+            <h1>Products</h1>
+            {
+                user.isAdmin ?
                 <AdminView productsData={products} fetchData={fetchData} />
-            </Container>
+                :
+                <UserView productsData={products} fetchData={fetchData} />
+            }
         </>
     );
 }
