@@ -87,7 +87,7 @@ export default function Login() {
   };
 
   return user.id !== null ? (
-    <Navigate to="/" />
+    <Navigate to="/products" />
   ) : (
     <Container className="my-3 p-3 p-md-5 w-50">
       <h1>Login</h1>
