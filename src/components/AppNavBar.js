@@ -2,12 +2,8 @@ import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
 import { useContext } from "react";
 import UserContext from "../UserContext";
-
-// Import FontAwesome
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { fas } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-library.add(fas);
+
 
 const AppNavBar = () => {
 

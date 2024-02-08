@@ -20,6 +20,10 @@ span {
   color: var(--primary-brand-color);
 }
 
+.primary {
+  color: var(--primary-brand-color);
+}
+
 /* =================== NAVBAR ===================  */
 #navbar {
   color: var(--primary-brand-color);

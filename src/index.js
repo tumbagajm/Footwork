@@ -5,6 +5,11 @@ import App from './App';
 // Import bootstrap
 import "bootstrap/dist/css/bootstrap.min.css";
 
+// Import FontAwesome
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+library.add(fas);
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
