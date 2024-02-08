@@ -5,6 +5,7 @@ import { Navigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 export default function Login() {
+  document.title = "Login"
   const { user, setUser } = useContext(UserContext);
 
   // State hooks to store values of the input fields
