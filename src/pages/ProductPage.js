@@ -4,15 +4,21 @@ import AdminView from "../components/AdminView";
 import UserView from "../components/UserView";
 
 const ProductPage = () => {
+    document.title = "Products";
+
     const { user } = useContext(UserContext);
     const [products, setProducts] = useState([]);
+    const [target, setTarget] = useState("all");
 
-    let target = "";
-    document.title = "Products";
-    if(user.isAdmin){
-        target = "all";
-        document.title = "Admin Dashboard";
-    }
+    console.log(user)
+
+    // let target = ""
+    // if(user.isAdmin){
+    //     // setTarget("all");
+    //     target = "all"
+    //     document.title = "Admin Dashboard";
+    // }
+    
 
     const fetchData = () => {
         // get all active courses
@@ -30,7 +36,12 @@ const ProductPage = () => {
         });
     };
 
+    
+
     useEffect(() => {
+        if(user.isAdmin){
+            setTarget("all");
+        }
         fetchData();
     }, []);
 
