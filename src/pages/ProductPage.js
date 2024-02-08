@@ -35,7 +35,7 @@ const ProductPage = () => {
 
     useEffect(() => {
         fetchData();
-    }, []);
+    }, [target]);
 
     return (
         <>
