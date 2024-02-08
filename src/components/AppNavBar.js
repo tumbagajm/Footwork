@@ -12,8 +12,6 @@ library.add(fas);
 const AppNavBar = () => {
 
     const { user } = useContext(UserContext);
-    
-	console.log(user); //For checking
 
     return (
         <Navbar expand="lg" className="bg-body-tertiary shadow">
