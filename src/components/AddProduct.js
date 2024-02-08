@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 import { Navigate, useNavigate } from "react-router-dom";
 import UserContext from "../UserContext";
 
-const AddProductPage = () => {
+const AddProduct = () => {
     const navigate = useNavigate();
     const { user } = useContext(UserContext);
 
@@ -110,4 +110,4 @@ const AddProductPage = () => {
   );
 }
 
-export default AddProductPage;
+export default AddProduct;
