@@ -23,7 +23,7 @@ const RegisterPage = () => {
         } else {
             setIsActive(false);
         }
-    });
+    },[firstName, lastName, email, mobileNo, confirmPassword, password]);
 
     function registerUser(e) {
 		// Prevents page redirection via form submission

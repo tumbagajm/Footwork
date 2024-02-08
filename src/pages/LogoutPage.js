@@ -15,7 +15,7 @@ import UserContext from "../UserContext";
       email: null,
       isAdmin: null,
     });
-  }, []);
+  }, [setUser]);
 
   return <Navigate to="/login" />;
 }

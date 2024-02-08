@@ -29,7 +29,7 @@ const AppNavBar = () => {
                             user.isAdmin ? (
                                 <>
                                     <NavDropdown title={<FontAwesomeIcon icon="fa-solid fa-user" />} id="basic-nav-dropdown">
-                                        <NavDropdown.Item as={Link} to="/Profile">
+                                        <NavDropdown.Item as={Link} to="/">
                                             Admin Dashboard
                                         </NavDropdown.Item>
 
@@ -63,14 +63,14 @@ const AppNavBar = () => {
                         (
                             <>  
                                 <NavDropdown title={<FontAwesomeIcon icon="fa-solid fa-user" />} id="basic-nav-dropdown">
-                                        <NavDropdown.Item as={NavLink} to="/register">
-                                            Register
-                                        </NavDropdown.Item>
+                                    <NavDropdown.Item as={NavLink} to="/register">
+                                        Register
+                                    </NavDropdown.Item>
 
-                                        <NavDropdown.Item as={NavLink} to="/login">
-                                            Login
-                                        </NavDropdown.Item>
-                                    </NavDropdown>
+                                    <NavDropdown.Item as={NavLink} to="/login">
+                                        Login
+                                    </NavDropdown.Item>
+                                </NavDropdown>
                                 
                             </>
                         )}
