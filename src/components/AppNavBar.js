@@ -18,7 +18,7 @@ const AppNavBar = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="d-flex justify-content-between align-items-center w-100">
-                        <Navbar.Brand as={NavLink} to="/" className="fs-1 fw-bold d-lg-block">
+                        <Navbar.Brand as={NavLink} to="/" className="fs-1 fw-bold d-none d-lg-block">
                             Foot<span>Work.</span>
                         </Navbar.Brand>
                         <div className="d-flex gap-3 fs-5">

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Container } from "react-bootstrap";
+import error from "../images/not-found.svg"
 
 function ErrorPage() {
   const data = {
@@ -11,11 +12,23 @@ function ErrorPage() {
 
   return (
     <>
-      <Container className="text-center border rounded my-5 p-5">
+
+    <Container className="mt-5 d-flex flex-column justify-content-center align-items-center gap-5">
+        <img
+          src={error}
+          alt="404"
+          className="img-fluid w-50"
+        />
+        <p>
+          Go back to the <Link to="/" className="text-decoration-none">homepage</Link>
+        </p>
+      </Container>
+
+      {/* <Container className="text-center border rounded my-5 p-5">
         <h1>{data.title}</h1>
         <h4>{data.content}</h4>
         <Link to={data.destination}>{data.label}</Link>
-      </Container>
+      </Container> */}
     </>
   );
 }
