@@ -5,11 +5,26 @@ import ProductList from "./products/ProductList";
 export default function UserView({ productsData }) {
     const [productCount, setProductCount] = useState(0);
 
+    console.log(productsData.length);
+
+    useEffect(() => {
+        const getProductCount = () => {
+            setProductCount(productsData.length);
+        }
+
+        getProductCount();
+
+        // Cleanup function (optional)
+        return () => {
+            // Cleanup code here if needed
+        };
+    }, [productCount])
+
     return (
         <>
             <Container>
                 <Row className="py-3">
-                    <h1 className="d-block fw-medium">Product List <span>{`(${productCount})`}</span></h1> 
+                    <h1 className="d-block fw-medium">Product List <span className="fs-2">{`(${productCount})`}</span></h1> 
                     <h5 className="d-block fw-medium text-secondary">Walk in Confidence, Stride in Style</h5>
                 </Row>
                 <Row className="py-3">
