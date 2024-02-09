@@ -5,20 +5,14 @@ import ProductList from "./products/ProductList";
 export default function UserView({ productsData }) {
     const [productCount, setProductCount] = useState(0);
 
-    console.log(productsData.length);
-
     useEffect(() => {
         const getProductCount = () => {
             setProductCount(productsData.length);
         }
 
-        getProductCount();
+        getProductCount()
 
-        // Cleanup function (optional)
-        return () => {
-            // Cleanup code here if needed
-        };
-    }, [productCount])
+    }, [productsData])
 
     return (
         <>
