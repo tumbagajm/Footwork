@@ -1,23 +1,17 @@
 import { useState, useEffect } from "react";
+import { Container, Row } from "react-bootstrap";
 import ProductCard from "./products/ProductCard";
+import ProductList from "./products/ProductList";
 
 export default function UserView({ productsData }) {
-    const [products, setProducts] = useState([]);
-
-    useEffect(() => {
-        const productsArr = productsData.map(product => {
-            console.log(product);
-            return (
-                <ProductCard productProp={product} key={product._id} />
-            );
-        });
-        setProducts(productsArr);
-    }, [productsData]);
-
 
     return (
         <>
-            {products}
+            <Container>
+                <Row>
+                    <ProductList />
+                </Row>
+            </Container>
         </>
     );
 }

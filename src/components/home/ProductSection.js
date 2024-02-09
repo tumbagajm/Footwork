@@ -5,7 +5,7 @@ const ProductSection = () => {
   return (
     <>
         <Container>
-            <Row>
+            <Row className="mb-5">
                 <h2 className="d-block display-4 text-center">Our Collection</h2>
             </Row>
             <Row>
