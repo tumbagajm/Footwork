@@ -11,10 +11,10 @@ export default function ProductView() {
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
     const [price, setPrice] = useState(0);
+    const [quantity, setQuantity] = useState(1);
     const navigate = useNavigate();
     // retrieve the product id in the params/url -> :productId
     const { productId } = useParams();
-
     useEffect(() => {
         fetch(`${process.env.REACT_APP_API_URL}/products/${productId}`, {
             method: "GET",
@@ -27,18 +27,23 @@ export default function ProductView() {
                 setPrice(data.data.price);
             });
     });
+    const handleQuantityChange = (e) => {
+        const parsedValue = parseInt(e.target.value) || 1;
+        const newQuantity = Math.min(10, Math.max(1, parsedValue));
+        setQuantity(newQuantity);
+    };
 
 
-    const purchase = (productId) => {
-        fetch(`${process.env.REACT_APP_API_URL}/cart/add-to-cart`, {
+    const purchase = () => {
+        fetch(`${process.env.REACT_APP_API_URL}/carts/add-to-cart`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
                 Authorization: `Bearer ${localStorage.getItem("token")}`,
             },
             body: JSON.stringify({
-                purchasedProducts: [{ productId }],
-                quantity: price,
+                productId: productId,
+                quantity: quantity,
             }),
         })
             .then((res) => res.json())
@@ -58,7 +63,7 @@ export default function ProductView() {
                         icon: "error",
                         text: data.error,
                     });
-                } 
+                }
             });
     };
 
@@ -76,13 +81,30 @@ export default function ProductView() {
                             <Card.Subtitle>Product Details</Card.Subtitle>
                             <Card.Text>Additional product details here.</Card.Text>
                             {user.id !== null ? (
-                                <Button variant="primary" onClick={() => purchase(productId)}>
-                                    {<FontAwesomeIcon icon={faCartPlus} />}
-                                </Button>
+                                <>
+                                    <label htmlFor="quantity">Quantity:</label>
+                                    <input
+                                        type="number"
+                                        id="quantity"
+                                        name="quantity"
+                                        min="1"
+                                        max="10"
+                                        step="1"
+                                        value={quantity}
+                                        onChange={handleQuantityChange}
+                                    />
+                                    <Button variant="primary" onClick={() => purchase(productId)}>
+                                        {<FontAwesomeIcon icon={faCartPlus} />}
+                                    </Button>
+                                </>
+
                             ) : (
-                                <Link className="btn-danger btn" to="/login">
-                                    Login to Purchase
-                                </Link>
+                                <>
+                                    <Link className="btn-danger btn" to="/login">
+                                        Login to Purchase
+                                    </Link>
+                                </>
+
                             )}
                         </Card.Body>
                     </Card>
