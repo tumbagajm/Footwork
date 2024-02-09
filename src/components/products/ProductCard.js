@@ -3,41 +3,43 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const ProductCard = ({productProp}) => {
-  const { _id, name, description, price } = productProp;
+  const { _id, name, description, price, images } = productProp;
+  const [ image, setImage ] = useState("");
 
-  const [shoe, setShoe] = useState({})
 
-  
 
-  useEffect(()=> {
-    const fetchData = async () => {
-        try {
-            const response = await fetch("https://api.escuelajs.co/api/v1/products/4");
-            const data = await response.json();
-            setShoe(data)
-        } catch(error) {
-            console.error('Error fetching data:', error);
-        }
-    }
+  useEffect(() => {
+    const getImage = () => {
+    if(image == "" || image == null || image == undefined) {
+      setImage("https://placehold.co/400x400");
+    } 
 
-    fetchData();
+    setImage(images.data[0]);
+
+    getImage();
 
     // Cleanup function (optional)
     return () => {
         // Cleanup code here if needed
     };
-
+  }
   }, [])
+  
 
-  console.log(shoe);
+ 
+
 
   return (
     <>
       <div className="mb-5 d-flex flex-column justify-content-center align-items-center gap-3">
-        <img src="https://placehold.co/400x400" className="img-fluid rounded-4" />
-        <h4>{name}</h4>
-        <h5>&#8369;{price}</h5>
-        <Link className="btn btn-primary" to={`/products/${_id}`}>Details</Link>
+        <div className="product_box">
+          <Link to={`/products/${_id}`}><img src={"https://placehold.co/400x400"} className="product_img rounded-4" /></Link>
+          <div className="product_box_items text-white">
+            <h4>{name}</h4>
+            <h5>&#8369;{price}</h5>
+            <Link className="btn btn-primary" to={`/products/${_id}`}>Details</Link>
+          </div>
+        </div>
       </div>
       {/* <Card className="p-3 my-3">
         <Card.Body>

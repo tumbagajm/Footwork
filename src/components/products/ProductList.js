@@ -1,6 +1,7 @@
 import ProductCard from './ProductCard';
 import { useEffect, useState, } from 'react';
 import { Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const ProductList = () => {
     const [products, setProducts] = useState([]);
