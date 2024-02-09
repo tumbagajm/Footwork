@@ -1,4 +1,4 @@
-import HeroSection from "../components/HeroSection";
+import HeroSection from "../components/home/HeroSection";
 
 
 const HomePage = () => {
@@ -10,4 +10,4 @@ const HomePage = () => {
     )
   }
 
-export default HomePage
+export default HomePage;

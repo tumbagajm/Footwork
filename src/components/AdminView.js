@@ -1,8 +1,8 @@
 import { Table, Container } from "react-bootstrap";
 import { useState, useEffect } from "react";
-import ArchiveProduct from "./ArchiveProduct";
-import ActivateProduct from "./ActivateProduct";
-import UpdateProduct from "./UpdateProduct";
+import ArchiveProduct from "./products/ArchiveProduct";
+import ActivateProduct from "./products/ActivateProduct";
+import UpdateProduct from "./products/UpdateProduct";
 
 const AdminView = ({ productsData, fetchData }) => {
     const [products, setProducts] = useState([]);

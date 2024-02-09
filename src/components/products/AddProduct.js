@@ -2,7 +2,7 @@ import { Form, Button } from "react-bootstrap";
 import { useState, useContext } from "react";
 import Swal from "sweetalert2";
 import { Navigate, useNavigate } from "react-router-dom";
-import UserContext from "../UserContext";
+import UserContext from "../../UserContext";
 
 const AddProduct = () => {
     const navigate = useNavigate();
