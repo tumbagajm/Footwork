@@ -7,6 +7,7 @@ import UserContext from "../../UserContext";
 const AddProduct = () => {
     const navigate = useNavigate();
     const { user } = useContext(UserContext);
+    const [images, setImages] = useState([]);
 
 
     const [name, setName] = useState("");
@@ -28,6 +29,7 @@ const AddProduct = () => {
                 name: name,
                 description: description,
                 price: price,
+                images: images
             }),
         })
             .then((res) => res.json())
@@ -47,13 +49,32 @@ const AddProduct = () => {
                         text: data.error,
                     });
                 }
-
             });
+    };
+
+    const convertToBase64 = (e) => {
+        const files = e.target.files;
+
+        for (let i = 0; i < files.length; i++) {
+            const reader = new FileReader();
+            reader.readAsDataURL(files[i]);
+
+            reader.onload = () => {
+                setImages(prevImages => [...prevImages, reader.result]);
+            };
+
+            reader.onerror = (error) => {
+                console.error('Error reading file:', error);
+            };
+        }
+    };
+    const removeImage = (index) => {
+        setImages(prevImages => prevImages.filter((_, i) => i !== index));
     };
     return (
         user.isAdmin === true ?
             <>
-                <h1 className="my-5 text-center">Add Course</h1>
+                <h1 className="my-5 text-center">Add Product</h1>
                 <Form onSubmit={e => createProduct(e)}>
                     <Form.Group>
                         <Form.Label>Name:</Form.Label>
@@ -67,11 +88,35 @@ const AddProduct = () => {
                         <Form.Label>Price:</Form.Label>
                         <Form.Control type="number" placeholder="Enter Price" required value={price} onChange={e => { setPrice(e.target.value) }} />
                     </Form.Group>
+                    <div>
+                        {images.map((image, index) => (
+                            <div key={index}>
+                                <Form.Group>
+                                    <Form.Label>{`Image ${index + 1}:`}</Form.Label>
+                                    <img src={image} alt={`Image ${index + 1}`} />
+                                    <Button variant="danger" onClick={() => removeImage(index)}>Remove</Button>
+                                </Form.Group>
+                            </div>
+                        ))}
+
+                        <Form.Group>
+                            <Form.Label>Choose Images:</Form.Label>
+                            <Form.Control
+                                id="custom-files"
+                                type="file"
+                                label="Choose Images"
+                                accept="image/*"
+                                multiple
+                                onChange={(e) => convertToBase64(e)}
+                            />
+                        </Form.Group>
+                    </div>
                     <Button variant="primary" type="submit" className="my-5">Submit</Button>
                 </Form>
+
             </>
             :
-            <Navigate to="/*" />
+            <Navigate to="/addProduct" />
 
     );
 }
