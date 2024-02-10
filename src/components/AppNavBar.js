@@ -54,7 +54,7 @@ const AppNavBar = () => {
                                     <div className="d-flex">
                                         <Nav.Link as={NavLink} to="/cart"><FontAwesomeIcon icon="fa-solid fa-cart-shopping" /></Nav.Link>
                                         <NavDropdown title={<FontAwesomeIcon icon="fa-solid fa-user" />} id="basic-nav-dropdown">
-                                            <NavDropdown.Item as={Link} to="/Profile">
+                                            <NavDropdown.Item as={Link} to="/profile">
                                                 Profile
                                             </NavDropdown.Item>
 
