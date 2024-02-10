@@ -85,10 +85,21 @@ export default function Login() {
     <Navigate to="/" />
   ) : (
     <Container>
-      <Row className="login_container mx-1 my-5 m-md-5 align-items-center border rounded-3 shadow">
-        <Col md={6} className="p-0">
-          <div className="login_box d-flex flex-column justify-content-center gap-3 h-100">
+      <Row className="my-3 border rounded-3 shadow">
+        <Col lg={6} className="p-0  d-flex justify-content-center align-items-start">
+          <div className="p-5 d-flex flex-column justify-content-center gap-3">
               <h1 className="fw-bold">Login</h1>
+              <div className="p-5 bg-light rounded-4 border">
+                <p>You can login with 3 different user types:</p>
+                <div className="pb-3 d-flex flex-column">
+                  <p>Email: <span className="text-dark fw-bold">admin@email.com</span></p>
+                  <p>Password: <span className="text-dark fw-bold">admin123</span></p>
+                </div>
+                <div className="d-flex flex-column">
+                  <p>Email: <span className="text-dark fw-bold">customer@mail.com</span></p>
+                  <p>Password: <span className="text-dark fw-bold">customer123</span></p>
+                </div>
+              </div>
               <Form onSubmit={(e) => authenticate(e)}>
                 <Form.Group className="mb-3" controlId="formEmail">
                   <Form.Label>Email address</Form.Label>
@@ -99,13 +110,14 @@ export default function Login() {
                   <Form.Label>Password</Form.Label>
                   <Form.Control type="password" placeholder="Enter password" required value={password} onChange={(e) => setPassword(e.target.value) }/>
                 </Form.Group>
-
+          			<div className="d-flex flex-column">
                 {
                   isActive ? 
                   ( <Button variant="success" type="submit">Login</Button>) 
                   : 
                   ( <Button variant="secondary" type="submit" disabled>Login</Button>)
                 }
+                </div>
               </Form>
               <p className="text-secondary">
                 Do you have an account? 
@@ -115,8 +127,8 @@ export default function Login() {
               </p>
           </div>
         </Col>
-        <Col className="p-0 img_box">
-          <img src={shoe} alt="login-img" className="img-fluid rounded-3" />
+        <Col lg={6} className="p-0 d-none d-lg-block">
+          <img src={shoe} alt="login-img" className="img_box rounded-3" />
         </Col>
       </Row>
     </Container>
