@@ -8,7 +8,7 @@ import UpdateProfilePicture from "../components/profile/UpdateProfilePicture";
 
 
 export default function Profile() {
-
+    document.title = "Profile";
     const { user } = useContext(UserContext);
     const [userDetails, setUserDetails] = useState({});
     const [token, setToken] = useState('');
