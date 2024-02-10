@@ -86,10 +86,10 @@ export default function Login() {
   ) : (
     <Container>
       <Row className="my-3 border rounded-3 shadow">
-        <Col lg={6} className="p-0  d-flex justify-content-center align-items-start">
+        <Col lg={6} className="p-0  d-flex justify-content-center align-items-center">
           <div className="p-5 d-flex flex-column justify-content-center gap-3">
               <h1 className="fw-bold">Login</h1>
-              <div className="p-5 bg-light rounded-4 border">
+              {/* <div className="p-5 bg-light rounded-4 border">
                 <p>You can login with 3 different user types:</p>
                 <div className="pb-3 d-flex flex-column">
                   <p>Email: <span className="text-dark fw-bold">admin@email.com</span></p>
@@ -99,7 +99,7 @@ export default function Login() {
                   <p>Email: <span className="text-dark fw-bold">customer@mail.com</span></p>
                   <p>Password: <span className="text-dark fw-bold">customer123</span></p>
                 </div>
-              </div>
+              </div> */}
               <Form onSubmit={(e) => authenticate(e)}>
                 <Form.Group className="mb-3" controlId="formEmail">
                   <Form.Label>Email address</Form.Label>
@@ -127,7 +127,7 @@ export default function Login() {
               </p>
           </div>
         </Col>
-        <Col lg={6} className="p-0 d-none d-lg-block">
+        <Col lg={6} className="p-0 d-none d-lg-block h-50">
           <img src={shoe} alt="login-img" className="img_box rounded-3" />
         </Col>
       </Row>
