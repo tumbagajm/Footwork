@@ -18,7 +18,7 @@ export default function UserView({ productsData }) {
         <>
             <Container>
                 <Row className="py-3">
-                    <h1 className="d-block fw-medium">Product List <span className="fs-2">{`(${productCount})`}</span></h1> 
+                    <h1 className="d-block fw-medium d-flex align-items-center gap-2">Product List <span className="fs-2">{`(${productCount})`}</span></h1> 
                     <h5 className="d-block fw-medium text-secondary">Walk in Confidence, Stride in Style</h5>
                 </Row>
                 <Row className="py-3">
