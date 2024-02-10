@@ -49,19 +49,13 @@ export default function Login() {
 
           Swal.fire({
             title: "Login Successful",
-            text: "Wellcome to Zuitt",
+            text: "Wellcome to FootWork.",
             icon: "success",
-          });
-        } else if (data.error === "No email Found.") {
-          Swal.fire({
-            title: "Oh, no!",
-            text: "Your email is not registered",
-            icon: "warning",
           });
         } else {
           Swal.fire({
-            title: "Something went wrong.!",
-            text: "Please try again later.",
+            title: "Something went wrong!",
+            text: data.error,
             icon: "error",
           });
         }
