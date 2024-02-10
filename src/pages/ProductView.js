@@ -5,6 +5,7 @@ import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import UserContext from "../UserContext";
 import Swal from "sweetalert2";
+import Loading from "../components/Loading";
 
 export default function ProductView() {
     const { user } = useContext(UserContext);
@@ -12,9 +13,11 @@ export default function ProductView() {
     const [description, setDescription] = useState("");
     const [price, setPrice] = useState(0);
     const [quantity, setQuantity] = useState(1);
+    const [isLoading, setIsloading] = useState(true);
     const navigate = useNavigate();
     // retrieve the product id in the params/url -> :productId
     const { productId } = useParams();
+
     useEffect(() => {
         fetch(`${process.env.REACT_APP_API_URL}/products/${productId}`, {
             method: "GET",
@@ -25,6 +28,8 @@ export default function ProductView() {
                 setName(data.data.name);
                 setDescription(data.data.description);
                 setPrice(data.data.price);
+                setIsloading(false);
+
             });
     });
     const handleQuantityChange = (e) => {
@@ -48,7 +53,6 @@ export default function ProductView() {
         })
             .then((res) => res.json())
             .then((data) => {
-
                 if (data.message) {
                     Swal.fire({
                         title: "Successfully purchased",
@@ -113,63 +117,73 @@ export default function ProductView() {
                 </Row>
             </Container> */}
 
-            <Container className="mt-5">
-                <Row>
-                    <Col>
-                        <div className="product_card p-4 d-flex flex-column gap-3 gap-md-4 rounded-4 shadow">
-                            <Row>
-                                <h2 className="fw-semibold">Product Overview</h2>
-                                {/* <Card.Subtitle className="mb-2 text-muted">Product Overviews with image gallery and expandable details</Card.Subtitle> */}
-                            </Row>
-                            <Row>
-                                <Col lg={6} className="mb-4">
-                                    <img src={"https://placehold.co/400x400"} className="product_img rounded-4" />
-                                </Col>
-                                <Col lg={6} className="mb-4 d-flex flex-column gap-4">
-                                    <div>
-                                        <h2 className="fw-semibold">{name}</h2>
-                                        <p className="mb-4 primary">
-                                            <FontAwesomeIcon icon="fa-solid fa-star" />
-                                            <FontAwesomeIcon icon="fa-solid fa-star" />
-                                            <FontAwesomeIcon icon="fa-solid fa-star" />
-                                            <FontAwesomeIcon icon="fa-solid fa-star" />
-                                            <FontAwesomeIcon icon="fa-solid fa-star-half-stroke" />
-                                        </p>
-                                        <h3 className="fw-light">&#8369;{price}</h3>
-                                    </div>
-                                    <p className="text-secondary">{description}</p>
+            {
+                isLoading ? (
+                    <Loading />
+                )
+                :
+                (
+                    <Container className="mt-5">
+                        <Row>
+                            <Col>
+                                <div className="product_card p-4 d-flex flex-column gap-3 gap-md-4 rounded-4 shadow">
+                                    <Row>
+                                        <h2 className="fw-semibold">Product Overview</h2>
+                                        {/* <Card.Subtitle className="mb-2 text-muted">Product Overviews with image gallery and expandable details</Card.Subtitle> */}
+                                    </Row>
+                                    <Row>
+                                        <Col lg={6} className="mb-4">
+                                            <img src={"https://placehold.co/400x400"} className="product_img rounded-4" />
+                                        </Col>
+                                        <Col lg={6} className="mb-4 d-flex flex-column gap-4">
+                                            <div>
+                                                <h2 className="fw-semibold">{name}</h2>
+                                                <p className="mb-4 primary">
+                                                    <FontAwesomeIcon icon="fa-solid fa-star" />
+                                                    <FontAwesomeIcon icon="fa-solid fa-star" />
+                                                    <FontAwesomeIcon icon="fa-solid fa-star" />
+                                                    <FontAwesomeIcon icon="fa-solid fa-star" />
+                                                    <FontAwesomeIcon icon="fa-solid fa-star-half-stroke" />
+                                                </p>
+                                                <h3 className="fw-light">&#8369;{price}</h3>
+                                            </div>
+                                            <p className="text-secondary">{description}</p>
 
-                                    <div class="form-group row">
-                                        <div class="col-4 ">
-                                            <label className="mb-2" for="quantity">Quantity</label>
-                                            <input
-                                            className="form-control"
-                                            type="number"
-                                            id="quantity"
-                                            name="quantity"
-                                            min="1"
-                                            max="10"
-                                            step="1"
-                                            value={quantity}
-                                            onChange={handleQuantityChange}
-                                            />
-                                        </div>
-                                    </div> 
+                                            <div class="form-group row">
+                                                <div class="col-4 ">
+                                                    <label className="mb-2" for="quantity">Quantity</label>
+                                                    <input
+                                                    className="form-control"
+                                                    type="number"
+                                                    id="quantity"
+                                                    name="quantity"
+                                                    min="1"
+                                                    max="10"
+                                                    step="1"
+                                                    value={quantity}
+                                                    onChange={handleQuantityChange}
+                                                    />
+                                                </div>
+                                            </div> 
 
-                                    <div className="row">
-                                        <div className="col d-flex gap-3 align-items-center">
-                                            <button type="button" className="btn btn-dark py-2 px-5 fs-6">Add to cart</button>
-                                            <span type="button">
-                                                <FontAwesomeIcon icon="fa-solid fa-heart" className="fs-3"/>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </Col>
-                            </Row>
-                        </div>
-                    </Col>
-                </Row>
-            </Container>
+                                            <div className="row">
+                                                <div className="col d-flex gap-3 align-items-center">
+                                                    <button type="button" className="btn btn-dark py-2 px-5 fs-6">Add to cart</button>
+                                                    <span type="button">
+                                                        <FontAwesomeIcon icon="fa-solid fa-heart" className="fs-3"/>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </Col>
+                                    </Row>
+                                </div>
+                            </Col>
+                        </Row>
+                    </Container>
+                )
+            }
+
+            
         </>
     );
 }

@@ -2,6 +2,7 @@ import ProductCard from './ProductCard';
 import { useEffect, useState, } from 'react';
 import { Col, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import Loading from '../Loading';
 
 const ProductList = () => {
     const [products, setProducts] = useState([]);
@@ -47,11 +48,7 @@ const ProductList = () => {
     return (
         <>
             {loading ? ( // Check loading state, if true, show loading animation
-            <div className='d-flex justify-content-center align-items-center'>
-                <Spinner animation="border" role="status">
-                    <span className="sr-only">Loading...</span>
-                </Spinner>
-            </div>
+            <Loading />
             ) : (
                 <>{productList}</> // Once data is loaded, show product list
             )}
