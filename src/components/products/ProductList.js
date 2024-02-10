@@ -1,10 +1,12 @@
 import ProductCard from './ProductCard';
 import { useEffect, useState, } from 'react';
-import { Col } from 'react-bootstrap';
+import { Col, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const ProductList = () => {
     const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(true); // State variable to track loading state
+
     const url = `${process.env.REACT_APP_API_URL}/products/`;
     const options = {
         method: "GET",
@@ -17,6 +19,8 @@ const ProductList = () => {
                 const response = await fetch(url, options);
                 const data = await response.json();
                 setProducts(data)
+                setLoading(false); // Set loading to false once data is fetched
+
             } catch(error) {
                 console.error('Error fetching data:', error);
             }
@@ -31,7 +35,6 @@ const ProductList = () => {
 
     }, []); // Empty dependency array means this effect runs only once after the initial render
 
-    console.log(products);
 
     const productList = products.map(product => {
                             return (
@@ -43,7 +46,15 @@ const ProductList = () => {
 
     return (
         <>
-            { productList }
+            {loading ? ( // Check loading state, if true, show loading animation
+            <div className='d-flex justify-content-center align-items-center'>
+                <Spinner animation="border" role="status">
+                    <span className="sr-only">Loading...</span>
+                </Spinner>
+            </div>
+            ) : (
+                <>{productList}</> // Once data is loaded, show product list
+            )}
         </>
     )
 }
