@@ -168,7 +168,7 @@ export default function ProductView() {
 
                                             <div className="row">
                                                 <div className="col d-flex gap-3 align-items-center">
-                                                    <button type="button" className="btn btn-dark py-2 px-5 fs-6">Add to cart</button>
+                                                    <button type="button" className="btn btn-dark py-2 px-5 fs-6" onClick={purchase}>Add to cart</button>
                                                     <span type="button">
                                                         <FontAwesomeIcon icon="fa-solid fa-heart" className="fs-3"/>
                                                     </span>
