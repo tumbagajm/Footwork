@@ -7,7 +7,7 @@ const CartPage = () => {
         <Container>
             <Row className="pb-5">
                 <Col>
-                    <h2>Shopping Cart</h2>
+                    <h1>Shopping Cart</h1>
                 </Col>
             </Row>
             <Row>

@@ -1,8 +1,9 @@
-import { Form, Button, Container } from "react-bootstrap";
+import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import { useState, useEffect, useContext } from "react";
-import UserContext from '../UserContext';
 import { Navigate } from 'react-router-dom';
+import UserContext from '../UserContext';
 import Swal from 'sweetalert2';
+import shoeImg from "../images/shoe-register.avif"
 
 const RegisterPage = () => {
 	document.title = "Register";
@@ -73,41 +74,51 @@ const RegisterPage = () => {
 			<Navigate to="/products" />
 			:
 			<>
-				<Container className="my-3 p-5 w-50">
-					<h1 className="my-3">Registration</h1>
-					<Form onSubmit={e => registerUser(e)}>
-						<Form.Group className="mb-3" controlId="formBasicEmail">
-							<Form.Label>First Name</Form.Label>
-							<Form.Control type="text" placeholder="Enter First Name" required value={firstName} onChange={e => { setFirstName(e.target.value) }} />
+				<Container >
+					<Row className="my-3 border rounded-3 shadow">
+						<Col lg={6} className="p-5">
+							<div className="p-5">
+								<h1 className="my-3 fw-bold">Create an account</h1>
+								<Form onSubmit={e => registerUser(e)}>
+									<Form.Group className="mb-3 d-flex flex-column gap-3" controlId="formBasicEmail">
+										<Form.Label>First Name</Form.Label>
+										<Form.Control type="text" placeholder="Enter First Name" required value={firstName} onChange={e => { setFirstName(e.target.value) }} />
 
-							<Form.Label>Last Name</Form.Label>
-							<Form.Control type="text" placeholder="Enter Last Name" required value={lastName} onChange={e => { setLastName(e.target.value) }} />
+										<Form.Label>Last Name</Form.Label>
+										<Form.Control type="text" placeholder="Enter Last Name" required value={lastName} onChange={e => { setLastName(e.target.value) }} />
 
-							<Form.Label>Email address</Form.Label>
-							<Form.Control type="email" placeholder="Enter email" required value={email} onChange={e => { setEmail(e.target.value) }} />
+										<Form.Label>Email address</Form.Label>
+										<Form.Control type="email" placeholder="Enter email" required value={email} onChange={e => { setEmail(e.target.value) }} />
 
-							<Form.Label>Mobile Number</Form.Label>
-							<Form.Control type="number" placeholder="Enter 11 Digit No." required value={mobileNo} onChange={e => { setMobileNo(e.target.value) }} />
+										<Form.Label>Mobile Number</Form.Label>
+										<Form.Control type="number" placeholder="Enter 11 Digit No." required value={mobileNo} onChange={e => { setMobileNo(e.target.value) }} />
 
-							<Form.Label>Password</Form.Label>
-							<Form.Control type="password" placeholder="Enter Password" required value={password} onChange={e => { setPassword(e.target.value) }} />
+										<Form.Label>Password</Form.Label>
+										<Form.Control type="password" placeholder="Enter Password" required value={password} onChange={e => { setPassword(e.target.value) }} />
 
-							<Form.Label>Confirm Password</Form.Label>
-							<Form.Control type="password" placeholder="Confirm Password" required value={confirmPassword} onChange={e => { setConfirmPassword(e.target.value) }} />
+										<Form.Label>Confirm Password</Form.Label>
+										<Form.Control type="password" placeholder="Confirm Password" required value={confirmPassword} onChange={e => { setConfirmPassword(e.target.value) }} />
 
-						</Form.Group>
-						{/*Conditional Rendering -> shorthand if and else*/}
-						{
-							isActive ?
-								<Button variant="primary" type="submit">
-									Register
-								</Button>
-								:
-								<Button variant="primary" type="submit" disabled>
-									Register
-								</Button>
-						}
-					</Form>
+									</Form.Group>
+									<div className="d-flex flex-column">
+									{
+										isActive ?
+											<Button variant="success" type="submit">
+												Register
+											</Button>
+											:
+											<Button variant="secondary" type="submit" disabled>
+												Register
+											</Button>
+									}
+									</div>
+								</Form>
+							</div>
+						</Col>
+						<Col lg={6} className="p-0 d-none d-lg-block">
+							<img src={shoeImg} alt="shoe" className="register_img rounded-3" />
+						</Col>
+					</Row>
 				</Container>
 			</>
     )

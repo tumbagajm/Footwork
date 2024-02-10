@@ -8,7 +8,7 @@ const ProductSection = () => {
     <>
         <Container className="py-5">
             <Row className="py-5">
-                <h2 className="d-block display-4 text-center fw-medium">Our Collection</h2>
+                <h2 className="d-block display-4 text-center fw-bold">Our Collection</h2>
             </Row>
             <Row className="py-5">
                 <ProductList />

@@ -88,7 +88,7 @@ export default function Login() {
       <Row className="login_container mx-1 my-5 m-md-5 align-items-center border rounded-3 shadow">
         <Col md={6} className="p-0">
           <div className="login_box d-flex flex-column justify-content-center gap-3 h-100">
-              <h1>Login</h1>
+              <h1 className="fw-bold">Login</h1>
               <Form onSubmit={(e) => authenticate(e)}>
                 <Form.Group className="mb-3" controlId="formEmail">
                   <Form.Label>Email address</Form.Label>
