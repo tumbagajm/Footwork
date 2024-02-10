@@ -4,6 +4,7 @@ import UserContext from '../UserContext';
 import { Navigate } from 'react-router-dom';
 import ResetPassword from "../components/profile/ResetPassword";
 import UpdateProfile from "../components/profile/UpdateProfile";
+import UpdateProfilePicture from "../components/profile/UpdateProfilePicture";
 
 
 export default function Profile() {
@@ -50,6 +51,7 @@ export default function Profile() {
                 <Row>
                     <Col className="p-5 bg-primary text-white">
                         <h1 className="my-5">Profile</h1>
+                        <img src = {userDetails.image}/>
                         <h2 className="mt-3">{userDetails.firstName} {userDetails.lastName}</h2>
                         <hr />
                         <h4>Contacts</h4>
@@ -67,6 +69,11 @@ export default function Profile() {
                 <Row className="pt-4 mt-4">
                     <Col>
                         <UpdateProfile fetchData={fetchUserDetails}/>
+                    </Col>
+                </Row>
+                <Row className="pt-4 mt-4">
+                    <Col>
+                        <UpdateProfilePicture fetchData={fetchUserDetails}/>
                     </Col>
                 </Row>
             </>
