@@ -5,6 +5,7 @@ import { Navigate, useNavigate } from "react-router-dom";
 import UserContext from "../../UserContext";
 
 const AddProduct = () => {
+    document.title = "Add New Product";
     const navigate = useNavigate();
     const { user } = useContext(UserContext);
     const [images, setImages] = useState([]);
