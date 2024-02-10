@@ -51,18 +51,20 @@ const AppNavBar = () => {
                             : 
                             (
                                 <>
-                                    <Nav.Link as={NavLink} to="/cart"><FontAwesomeIcon icon="fa-solid fa-cart-shopping" /></Nav.Link>
-                                    <NavDropdown title={<FontAwesomeIcon icon="fa-solid fa-user" />} id="basic-nav-dropdown">
-                                        <NavDropdown.Item as={Link} to="/Profile">
-                                            Profile
-                                        </NavDropdown.Item>
+                                    <div className="d-flex">
+                                        <Nav.Link as={NavLink} to="/cart"><FontAwesomeIcon icon="fa-solid fa-cart-shopping" /></Nav.Link>
+                                        <NavDropdown title={<FontAwesomeIcon icon="fa-solid fa-user" />} id="basic-nav-dropdown">
+                                            <NavDropdown.Item as={Link} to="/Profile">
+                                                Profile
+                                            </NavDropdown.Item>
 
-                                        <NavDropdown.Divider />
+                                            <NavDropdown.Divider />
 
-                                        <NavDropdown.Item as={Link} to="/logout" className = "text-danger">
-                                            Logout
-                                        </NavDropdown.Item>
-                                    </NavDropdown>
+                                            <NavDropdown.Item as={Link} to="/logout" className = "text-danger">
+                                                Logout
+                                            </NavDropdown.Item>
+                                        </NavDropdown>
+                                    </div>
                                 </>
                             )
                         ) 

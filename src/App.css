@@ -16,12 +16,19 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+
+
 span {
   color: var(--primary-brand-color);
 }
 
 .primary {
   color: var(--primary-brand-color);
+}
+
+button.brand-secondary {
+  background-color: var(--secondary-brand-color) !important;
+  /* color: white; */
 }
 
 /* =================== NAVBAR ===================  */
