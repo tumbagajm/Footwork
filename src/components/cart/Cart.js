@@ -48,7 +48,7 @@ const Cart = () => {
                             <div>
                                 <p>Product Name:{item.productId.name}</p>
                                 <p>Quantity: {item.quantity}</p>
-                                <p>Subtotal: ${item.subtotal}</p>
+                                <p>Subtotal: &#8369;{item.subtotal}</p>
                             </div>
                             <div className="ms-auto">
                                 <button type="button" className='btn'>Remove</button>
