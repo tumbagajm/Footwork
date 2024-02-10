@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Loading from "../Loading";
 import { Container, Row, Col } from 'react-bootstrap';
+import RemoveFromCart from "./RemoveFromCart";
 
 const Cart = () => {
     const [cart, setCart] = useState(null);
@@ -51,7 +52,7 @@ const Cart = () => {
                                 <p>Subtotal: &#8369;{item.subtotal}</p>
                             </div>
                             <div className="ms-auto">
-                                <button type="button" className='btn'>Remove</button>
+                                <RemoveFromCart cartId={item.productId._id}/>
                             </div>
                         </li>
                     ))}
