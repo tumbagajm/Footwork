@@ -44,16 +44,6 @@ const ProductCard = ({productProp}) => {
         <h4 className="text-secondary">{name}</h4>
         <h5>&#8369;{price}</h5>
       </div>
-      {/* <Card className="p-3 my-3">
-        <Card.Body>
-        <Card.Title>{name}</Card.Title>
-        <Card.Subtitle>Description:</Card.Subtitle>
-        <Card.Text>{description}</Card.Text>
-        <Card.Subtitle>Price:</Card.Subtitle>
-        <Card.Text>PhP {price}</Card.Text>
-        <Link className="btn btn-primary" to={`/products/${_id}`}>Details</Link>
-        </Card.Body>
-      </Card> */}
     </>
   );
 };
