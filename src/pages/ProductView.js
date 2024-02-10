@@ -55,7 +55,7 @@ export default function ProductView() {
             .then((data) => {
                 if (data.message) {
                     Swal.fire({
-                        title: "Successfully purchased",
+                        title: "Added to cart",
                         icon: "success",
                         text: data.message,
                     });
@@ -147,6 +147,8 @@ export default function ProductView() {
                                                 </p>
                                                 <h3 className="fw-light">&#8369;{price}</h3>
                                             </div>
+
+                                            <h6>Product Details:</h6>
                                             <p className="text-secondary">{description}</p>
 
                                             <div class="form-group row">

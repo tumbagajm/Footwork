@@ -34,10 +34,10 @@ const ProductCard = ({productProp}) => {
       <div className="mb-5 d-flex flex-column justify-content-center align-items-center gap-3">
         <div className="product_box">
           <Link to={`/products/${_id}`}><img src={"https://placehold.co/400x400"} className="product_img rounded-4" /></Link>
-          <div className="product_box_items text-white">
-            <h4>{name}</h4>
-            <h5>&#8369;{price}</h5>
-            <Link className="btn btn-primary" to={`/products/${_id}`}>Details</Link>
+          <div className="d-flex flex-column justify-content-center align-items-center rounded-4 text-white overlay">
+            <h4 className="text-center">{name}</h4>
+            <h5 className="text-center">&#8369;{price}</h5>
+            <Link className="btn btn-light" to={`/products/${_id}`}>View Product</Link>
           </div>
         </div>
         <h4 className="text-secondary">{name}</h4>

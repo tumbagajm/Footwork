@@ -73,8 +73,6 @@ button.brand-secondary {
 
 .product_box {
   position: relative;
-  border-radius: 1rem;
-  overflow: hidden;
 }
 
 .product_img {
@@ -83,26 +81,31 @@ button.brand-secondary {
   object-fit: cover;
 }
 
-.product_box_items {
+/* .product_box_items {
     position: absolute;
     width: 100%;
     height: 100%;
-    /* bottom: 0 - to show, bottom: -100% - to hide */
     bottom: -100%;
     left: 0;
-    background: linear-gradient(
-      180deg,
-      hsla(var(--hue), 24%, 40%, 0.3) 0%,
-      hsla(var(--hue), 24%, 4%, 1) 95%
-    );
-    background: #C33764;  /* fallback colour. Make sure this is just one solid colour. */
-    background: linear-gradient(rgba(11, 11, 15, 0.8), rgba(144, 144, 144, 0.8)); /* The least supported option. */
     display: grid;
     align-items: flex-end;
     padding: 1.5rem 1.25rem;
     transition: 0.3s;
+} */
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  /* background: rgb(0, 0, 0); */
+  background: rgba(0, 0, 0, 0.8); /* Black see-through */
+  transition: .5s ease;
+  color: #f1f1f1;
+  opacity:0;
+  padding: 20px;
 }
 
-.product_box:hover .product_box_items {
-  bottom: 0;
+.product_box:hover .overlay {
+  opacity: 1;
 }

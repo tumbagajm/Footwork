@@ -9,7 +9,7 @@ import ProductPage from "./pages/ProductPage";
 import AddProduct from "./components/products/AddProduct";
 import ProductView from "./pages/ProductView";
 import ProfilePage from "./pages/ProfilePage";
-import Cart from "./components/cart/Cart";
+import CartPage from "./pages/CartPage";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -59,7 +59,7 @@ function App() {
           <Route element={<ProductPage />} path="/products" />
           <Route element= {<ProductView/>} path="/products/:productId"/>
           <Route element={<ProfilePage/>} path="/profile"/>
-          <Route element={<Cart/>} path="/cart"/>
+          <Route element={<CartPage/>} path="/cart"/>
         </Routes>
       </Router>
     </UserProvider>

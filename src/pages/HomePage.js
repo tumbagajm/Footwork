@@ -3,7 +3,7 @@ import ProductSection from "../components/home/ProductSection";
 
 
 const HomePage = () => {
-  document.title = "ZUITT Shop";
+  document.title = "Footwork";
     return (
       <>
         <HeroSection />
