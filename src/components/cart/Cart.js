@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import Loading from "../Loading";
 
 const Cart = () => {
     const [cart, setCart] = useState(null);
-    const [productDetails, setProductDetails] = useState({});
-    const [productName, setProductName] = useState("");
-    const [productThumbnail, setProductThumbnail] = useState("");
-
 
     useEffect(() => {
         // Fetch cart data for the logged-in user
@@ -18,11 +15,9 @@ const Cart = () => {
                         'Authorization': `Bearer ${localStorage.getItem("token")}`,
                     },
                 });
-                console.log(response);
                 if (response.ok) {
                     const cartData = await response.json();
                     setCart(cartData.data);
-                    console.log(cartData.data);
                 } else {
                     console.error('Error fetching cart data');
                 }
@@ -35,7 +30,7 @@ const Cart = () => {
     }, [cart]);
 
     if (!cart) {
-        return <div>Loading...</div>;
+        return <Loading/>;
     }
 
     return (
