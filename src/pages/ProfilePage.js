@@ -61,19 +61,54 @@ export default function Profile() {
             <Container>
                 <Row className="pb-5">
                     <Col>
-                        <h1>Profile</h1>
+                        <h1>My Profile</h1>
                     </Col>
                 </Row>
-                <Row>
+                <Row className="p-5 mb-3 d-flex border rounded-4">
+                    <Col lg={4}>
+                        <img src={userDetails.image} width={200} height={200} className="p-2  border border-1 rounded-circle" alt="profile-image" />
+                    </Col>
+                    <Col lg={8}>
+                        <Row className="mb-5 justify-content-between"> 
+                            <Col>
+                                <p className="text-secondary">First Name</p>
+                                <h4>{userDetails.firstName}</h4>
+                            </Col>
+                            <Col>
+                                <p className="text-secondary">Last Name</p>
+                                <h4>{userDetails.lastName}</h4>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
+                                <p className="text-secondary">Email Address</p>
+                                <h4>{userDetails.email}</h4>
+                            </Col>
+                            <Col>
+                                <p className="text-secondary">Mobile Number</p>
+                                <h4>{userDetails.mobileNo}</h4>
+                            </Col>
+                        </Row>
+                    </Col>
+                </Row>
+
+                <Row className="p-5 mb-3 d-flex border rounded-4">
                     <Col>
-                        <div className="p-5 mb-3 d-flex gap-3 border rounded-4">
-                            <img src={userDetails.images} alt="profile-image" />
-                        </div>
+                        <UpdateProfile fetchData={fetchUserDetails} />
+                    </Col>
+                    <Col>
+                        <ResetPassword />
+                    </Col>
+                </Row>
+                
+                <Row>
+                    <Col lg={6} className='p-5 mb-3 d-flex border rounded-4'>
+                        <UpdateProfilePicture fetchData={fetchUserDetails}/>
                     </Col>
                 </Row>
             </Container>
             
-            <Container className='d-block'>
+            <Container className='d-none'>
                 <Row>
                     <Col className="p-5 bg-primary text-white">
                         <h1 className="my-5">Profile</h1>

@@ -13,7 +13,9 @@ const UpdateProfile = ({fetchData}) => {
         setToken(storedToken);
     }, []);
 
-    const handleUpdateProfile = async () => {
+    const handleUpdateProfile = async (e) => {
+        e.preventDefault();
+
         try {
             const response = await fetch(`${process.env.REACT_APP_API_URL}/users/update-profile`, {
                 method: 'PATCH',
@@ -55,38 +57,41 @@ const UpdateProfile = ({fetchData}) => {
 
     return (
         <>      
-            <Container className="mt-5">
+            <Container>
                 <h2>Update Profile</h2>
-                <div className="form-group">
-                    <label>First Name:</label>
-                    <input
-                        type="text"
-                        className="form-control"
-                        value={firstName}
-                        onChange={(e) => setFirstName(e.target.value)}
-                    />
-                </div>
-                <div className="form-group">
-                    <label>Last Name:</label>
-                    <input
-                        type="text"
-                        className="form-control"
-                        value={lastName}
-                        onChange={(e) => setLastName(e.target.value)}
-                    />
-                </div>
-                <div className="form-group">
-                    <label>Mobile No:</label>
-                    <input
-                        type="text"
-                        className="form-control"
-                        value={mobileNo}
-                        onChange={(e) => setMobileNo(e.target.value)}
-                    />
-                </div>
-                <button className="btn btn-primary" onClick={handleUpdateProfile}>
-                    Update Profile
-                </button>
+
+                <form onSubmit={handleUpdateProfile}>
+                    <div className="form-group mb-3">
+                        <label htmlFor="firstName" className="form-label">First Name:</label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            value={firstName}
+                            onChange={(e) => setFirstName(e.target.value)}
+                        />
+                    </div>
+                    <div className="form-group mb-3">
+                        <label htmlFor="lastName" className="form-label">Last Name:</label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            value={lastName}
+                            onChange={(e) => setLastName(e.target.value)}
+                        />
+                    </div>
+                    <div className="form-group mb-3">
+                        <label htmlFor="mobileNo" className="form-label">Mobile No:</label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            value={mobileNo}
+                            onChange={(e) => setMobileNo(e.target.value)}
+                        />
+                    </div>
+                    <button className="btn btn-dark">
+                        Update Profile
+                    </button>
+                </form>
             </Container>
         </>
     );

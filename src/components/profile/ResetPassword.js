@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Container } from 'react-bootstrap';
 import Swal from "sweetalert2";
 
 const ResetPassword = () => {
@@ -45,7 +46,7 @@ const ResetPassword = () => {
     };
 
     return (
-        <div className="container">
+        <Container>
             <h2>Reset Password</h2>
             <form onSubmit={handleResetPassword}>
                 <div className="mb-3">
@@ -75,11 +76,11 @@ const ResetPassword = () => {
                     />
                 </div>
                 {message && <div className="alert alert-danger">{message}</div>}
-                <button type="submit" className="btn btn-primary">
+                <button type="submit" className="btn btn-dark">
                     Reset Password
                 </button>
             </form>
-        </div>
+        </Container>
     );
 };
 

@@ -94,7 +94,7 @@ const UpdateProfilePicture = ({fetchData}) =>{
                             onChange={(e) => convertToBase64(e)}
                         />
                     </Form.Group>
-                    <Button variant="primary" type="submit">Update Profile picture</Button>
+                    <Button variant="dark" type="submit">Update Profile picture</Button>
                 </Form>
             </Container>
         </>

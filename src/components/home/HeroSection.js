@@ -12,7 +12,7 @@ const HeroSection = () => {
             <Col md={6} className="d-flex flex-column justify-content-center align-items-start gap-3">
               <p className="display-3 fw-semibold">Find your dream sneakers</p>
               <p className="fs-4">Find your shoes from our various collections. Your Journey Starts with the Right Shoes.</p>
-              <Link to="/products" type="button" class="p-3 btn btn-danger rounded-4">Shop now</Link>
+              <Link to="/products" type="button" class="p-3 btn btn-dark rounded-4">Shop now</Link>
               
             </Col>
             <Col md={6} className="d-flex justify-content-center align-items-center">
