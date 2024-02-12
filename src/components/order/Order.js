@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from "react";
 // import AdminOrderView from "../components/AdminOrderView";
 import UserOrderView from "./UserOrderView";
 import UserContext from "../../UserContext"; 
-import AdminOrderView from "./AdminOrderView";
+import AdminOrderView from "../admin/AdminOrderView";
 
 const OrderPage = () => {
     document.title = "Orders";

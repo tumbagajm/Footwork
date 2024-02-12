@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Container, Row } from "react-bootstrap";
-import ProductList from "./products/ProductList";
+import ProductList from "./ProductList";
 
 export default function UserView({ productsData }) {
     const [productCount, setProductCount] = useState(0);

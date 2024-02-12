@@ -6,7 +6,7 @@ import LogoutPage from "./pages/LogoutPage";
 import RegisterPage from "./pages/RegisterPage";
 import ErrorPage from "./pages/ErrorPage";
 import ProductPage from "./pages/ProductPage";
-import AddProduct from "./components/products/AddProduct";
+import AddProduct from "./components/admin/AddProduct";
 import ProductView from "./pages/ProductView";
 import ProfilePage from "./pages/ProfilePage";
 import CartPage from "./pages/CartPage";

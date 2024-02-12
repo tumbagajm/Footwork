@@ -1,11 +1,11 @@
 import { Table, Container, Row, Col } from "react-bootstrap";
 import { useState, useEffect } from "react";
-import ArchiveProduct from "./products/ArchiveProduct";
-import ActivateProduct from "./products/ActivateProduct";
-import UpdateProduct from "./products/UpdateProduct";
+import ArchiveProduct from "../products/ArchiveProduct";
+import ActivateProduct from "../products/ActivateProduct";
+import UpdateProduct from "../products/UpdateProduct";
 import UserList from './UserList';
-import AdminOrderView from './order/AdminOrderView';
-import Loading from "./Loading";
+import AdminOrderView from './AdminOrderView';
+import Loading from "../Loading";
 
 const AdminView = ({ productsData, fetchData }) => {
     const [products, setProducts] = useState([]);

@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import UserContext from "../UserContext";
-import AdminView from "../components/AdminView";
-import UserView from "../components/UserView";
+import AdminView from "../components/admin/AdminView";
+import UserView from "../components/products/UserView";
 
 const ProductPage = () => {
     document.title = "Products";
