@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Loading from "../Loading";
-import { Container, Row, Col } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 import RemoveFromCart from "./RemoveFromCart";
+import Checkout from "./Checkout"; 
 
 const Cart = () => {
     const [cart, setCart] = useState(null);
@@ -81,7 +82,7 @@ const Cart = () => {
                             <h2 className="fw-bold">&#8369;{cart.totalPrice}</h2>
                         </div>
                     </div>
-                    <button type="button" className="p-3 btn btn-dark">Checkout</button>
+                    <Checkout />
                     <button type="button" className="p-3 btn btn-outline-dark">Continue Shopping</button>
                 </div>
             </Col>
