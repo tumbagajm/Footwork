@@ -59,7 +59,7 @@ const Cart = () => {
                 </ul>
             </Col>
             <Col lg={5}>
-                <div className="d-flex flex-column gap-3 p-3 p-md-5 bg-light border rounded-4">
+                <div className="d-flex flex-column gap-3 p-3 p-md-5 bg-light border rounded-4 sticky-top">
                     <h2>Order Summary</h2>
                     <div className="p-1 border-bottom"> 
                         <div className="d-flex justify-content-between">

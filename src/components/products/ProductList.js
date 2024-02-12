@@ -6,7 +6,7 @@ import Loading from '../Loading';
 
 const ProductList = () => {
     const [products, setProducts] = useState([]);
-    const [loading, setLoading] = useState(true); // State variable to track loading state
+    const [isLoading, setIsLoading] = useState(true); // State variable to track loading state
 
     const url = `${process.env.REACT_APP_API_URL}/products/`;
     const options = {
@@ -20,7 +20,7 @@ const ProductList = () => {
                 const response = await fetch(url, options);
                 const data = await response.json();
                 setProducts(data)
-                setLoading(false); // Set loading to false once data is fetched
+                setIsLoading(false); // Set loading to false once data is fetched
 
             } catch(error) {
                 console.error('Error fetching data:', error);
@@ -47,7 +47,7 @@ const ProductList = () => {
 
     return (
         <>
-            {loading ? ( // Check loading state, if true, show loading animation
+            {isLoading ? ( // Check loading state, if true, show loading animation
             <Loading />
             ) : (
                 <>{productList}</> // Once data is loaded, show product list
