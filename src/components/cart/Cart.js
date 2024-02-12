@@ -5,6 +5,7 @@ import RemoveFromCart from "./RemoveFromCart";
 import Checkout from "./Checkout"; 
 
 const Cart = () => {
+    document.title = "Cart";
     const [cart, setCart] = useState(null);
 
     useEffect(() => {
