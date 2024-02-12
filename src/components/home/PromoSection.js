@@ -24,7 +24,7 @@ const PromoSection = () => {
 
                 <Container>
                     <Row>
-                        <Col className="p-5 border rounded-4 bg-dark-subtle shadow">
+                        <Col className="p-5 border rounded-4 bg-light-subtle shadow">
                             <div className="p-5 text-center">
                                 <h1 className="mb-4">Exclusive Discounts for Members</h1>
                                 <p className="lead mb-sm-5 px-md-8">The time is now for it to be okay to be great. People in this world shun people for being great. For being a bright color. For standing out. But the time is now to be okay to be the greatest you.</p>

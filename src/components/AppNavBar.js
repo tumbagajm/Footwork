@@ -39,6 +39,9 @@ const AppNavBar = () => {
                                         <NavDropdown.Item as={NavLink} to="/addProduct">
                                             Add Product
                                         </NavDropdown.Item>
+                                        <NavDropdown.Item as={Link} to="/order">
+                                            Orders
+                                        </NavDropdown.Item>
 
                                         <NavDropdown.Divider />
 
@@ -56,6 +59,9 @@ const AppNavBar = () => {
                                         <NavDropdown title={<FontAwesomeIcon icon="fa-solid fa-user" />} id="basic-nav-dropdown">
                                             <NavDropdown.Item as={Link} to="/profile">
                                                 Profile
+                                            </NavDropdown.Item>
+                                            <NavDropdown.Item as={Link} to="/order">
+                                                Orders
                                             </NavDropdown.Item>
 
                                             <NavDropdown.Divider />

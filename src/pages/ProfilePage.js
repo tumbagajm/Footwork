@@ -1,5 +1,5 @@
 import { useContext, useState, useEffect } from 'react';
-import { Row, Col } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import UserContext from '../UserContext';
 import { Navigate } from 'react-router-dom';
 import ResetPassword from "../components/profile/ResetPassword";
@@ -57,6 +57,23 @@ export default function Profile() {
             ( <Loading /> )
             :
             (<>
+
+            <Container>
+                <Row className="pb-5">
+                    <Col>
+                        <h1>Profile</h1>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <div className="p-5 mb-3 d-flex gap-3 border rounded-4">
+                            <img src={userDetails.images} alt="profile-image" />
+                        </div>
+                    </Col>
+                </Row>
+            </Container>
+            
+            <Container className='d-block'>
                 <Row>
                     <Col className="p-5 bg-primary text-white">
                         <h1 className="my-5">Profile</h1>
@@ -85,6 +102,7 @@ export default function Profile() {
                         <UpdateProfilePicture fetchData={fetchUserDetails}/>
                     </Col>
                 </Row>
+            </Container>
             </>)
     )
 }
