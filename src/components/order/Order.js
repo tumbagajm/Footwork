@@ -3,6 +3,7 @@ import { useState, useEffect, useContext } from "react";
 import UserOrderView from "./UserOrderView";
 import UserContext from "../../UserContext"; 
 import AdminOrderView from "../admin/AdminOrderView";
+import { Navigate } from "react-router-dom";
 
 const OrderPage = () => {
     document.title = "Orders";
@@ -11,7 +12,7 @@ const OrderPage = () => {
     return (
         <>
             {user.isAdmin ? (
-                <AdminOrderView/>
+                <Navigate to="/products"/>
             ) : (
                 <UserOrderView/>
             )}

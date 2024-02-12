@@ -6,7 +6,6 @@ import LogoutPage from "./pages/LogoutPage";
 import RegisterPage from "./pages/RegisterPage";
 import ErrorPage from "./pages/ErrorPage";
 import ProductPage from "./pages/ProductPage";
-import AddProduct from "./components/admin/AddProduct";
 import ProductView from "./pages/ProductView";
 import ProfilePage from "./pages/ProfilePage";
 import CartPage from "./pages/CartPage";
@@ -56,7 +55,6 @@ function App() {
           <Route element={<LoginPage />} path="/login" />
           <Route element={<LogoutPage />} path="/logout" />
           <Route element={<RegisterPage />} path="/register" />
-          <Route element={<AddProduct />} path="/addProduct" />
           <Route element={<ProductPage />} path="/products" />
           <Route element= {<ProductView/>} path="/products/:productId"/>
           <Route element={<ProfilePage/>} path="/profile"/>
