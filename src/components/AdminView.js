@@ -4,6 +4,7 @@ import ArchiveProduct from "./products/ArchiveProduct";
 import ActivateProduct from "./products/ActivateProduct";
 import UpdateProduct from "./products/UpdateProduct";
 import UserList from './UserList';
+import AdminOrderView from './order/AdminOrderView';
 import Loading from "./Loading";
 
 const AdminView = ({ productsData, fetchData }) => {
@@ -94,7 +95,9 @@ const AdminView = ({ productsData, fetchData }) => {
                                         <div class="tab-pane fade" id="users-tab-pane" role="tabpanel" aria-labelledby="users-tab" tabindex="0">
                                             <UserList />
                                         </div>
-                                        <div class="tab-pane fade" id="orders-tab-pane" role="tabpanel" aria-labelledby="orders-tab" tabindex="0">...</div>
+                                        <div class="tab-pane fade" id="orders-tab-pane" role="tabpanel" aria-labelledby="orders-tab" tabindex="0">
+                                            <AdminOrderView/>
+                                        </div>
                                     </div>
                                 </Col>
                             </Row>

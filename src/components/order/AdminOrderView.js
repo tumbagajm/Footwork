@@ -31,7 +31,7 @@ const UserOrders = () => {
         };
 
         fetchUserOrders();
-    }, []); // Empty dependency array to run the effect only once on component mount
+    }, []); 
 
     return (
         <div>
