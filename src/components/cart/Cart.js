@@ -3,16 +3,15 @@ import Loading from "../Loading";
 import { Col } from 'react-bootstrap';
 import RemoveFromCart from "./RemoveFromCart";
 import Checkout from "./Checkout"; 
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
     document.title = "Cart";
     const [cart, setCart] = useState(null);
 
     useEffect(() => {
-        // Fetch cart data for the logged-in user
         const fetchCartData = async () => {
             try {
-                // Replace this with your actual API endpoint to fetch the cart data
                 const response = await fetch(`${process.env.REACT_APP_API_URL}/carts/get-cart`, {
                     method: 'GET',
                     headers: {
@@ -84,10 +83,9 @@ const Cart = () => {
                         </div>
                     </div>
                     <Checkout />
-                    <button type="button" className="p-3 btn btn-outline-dark">Continue Shopping</button>
+                    <Link to="/products" type="button" className="p-3 btn btn-outline-dark">Continue Shopping</Link>
                 </div>
             </Col>
-            {/* <p>Total Price: ${cart.totalPrice}</p> */}
         </>
     );
 };
