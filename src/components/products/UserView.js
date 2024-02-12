@@ -3,6 +3,7 @@ import { Container, Row } from "react-bootstrap";
 import ProductList from "./ProductList";
 
 export default function UserView({ productsData }) {
+    document.title = "Products"
     const [productCount, setProductCount] = useState(0);
 
     useEffect(() => {

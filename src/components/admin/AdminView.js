@@ -9,6 +9,7 @@ import AddProduct from './AddProduct';
 import Loading from "../Loading";
 
 const AdminView = ({ productsData, fetchData }) => {
+    document.title = "Admin Dashboard";
     const [products, setProducts] = useState([]);
     const [isLoading, setIsLoading] = useState(true); // State variable to track loading state
 

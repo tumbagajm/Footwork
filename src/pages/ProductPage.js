@@ -4,7 +4,6 @@ import AdminView from "../components/admin/AdminView";
 import UserView from "../components/products/UserView";
 
 const ProductPage = () => {
-    document.title = "Products";
 
     const { user } = useContext(UserContext);
     const [products, setProducts] = useState([]);
