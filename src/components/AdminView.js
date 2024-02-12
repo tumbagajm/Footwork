@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import ArchiveProduct from "./products/ArchiveProduct";
 import ActivateProduct from "./products/ActivateProduct";
 import UpdateProduct from "./products/UpdateProduct";
+import UserList from './UserList';
 import Loading from "./Loading";
 
 const AdminView = ({ productsData, fetchData }) => {
@@ -49,6 +50,7 @@ const AdminView = ({ productsData, fetchData }) => {
                 (
                     <Container>
                         <h1> Admin Dashboard</h1>
+                        <h2>Products</h2>
                         <Table striped bordered hover responsive>
                             <thead>
                                 <tr>
@@ -63,6 +65,9 @@ const AdminView = ({ productsData, fetchData }) => {
 
                             <tbody>{products}</tbody>
                         </Table>
+                        <h1>Users</h1>
+                        <UserList/>
+
                     </Container>
                 )
             }
