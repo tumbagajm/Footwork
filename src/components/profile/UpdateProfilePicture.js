@@ -76,7 +76,8 @@ const UpdateProfilePicture = ({fetchData}) =>{
     return (
         <>
             <Container className="mb-5">
-                <Form onSubmit={e=>{handleUpdateProfilePicture(e)}} className="d-flex flex-column gap-2 align-items-start">
+                <h2>Update Profile Picture</h2>
+                <Form onSubmit={e=>{handleUpdateProfilePicture(e)}} className="d-flex flex-column gap-3 align-items-start">
                 {image && (
                             <Form.Group className="d-flex flex-column gap-4">
                                 <Form.Label>Selected Image:</Form.Label>

@@ -65,7 +65,7 @@ export default function Profile() {
                     </Col>
                 </Row>
                 <Row className="p-5 mb-3 d-flex border rounded-4">
-                    <Col lg={4}>
+                    <Col lg={4} className="mb-4">
                         <img src={userDetails.image} width={200} height={200} className="p-2  border border-1 rounded-circle" alt="profile-image" />
                     </Col>
                     <Col lg={8}>
@@ -93,15 +93,15 @@ export default function Profile() {
                 </Row>
 
                 <Row className="p-5 mb-3 d-flex border rounded-4">
-                    <Col>
+                    <Col md={6} className="mb-4">
                         <UpdateProfile fetchData={fetchUserDetails} />
                     </Col>
-                    <Col>
+                    <Col md={6}>
                         <ResetPassword />
                     </Col>
                 </Row>
                 
-                <Row>
+                <Row> 
                     <Col lg={6} className='p-5 mb-3 d-flex border rounded-4'>
                         <UpdateProfilePicture fetchData={fetchUserDetails}/>
                     </Col>

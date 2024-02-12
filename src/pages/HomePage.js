@@ -1,6 +1,7 @@
 import HeroSection from "../components/home/HeroSection";
 import ProductSection from "../components/home/ProductSection";
 import PromoSection from "../components/home/PromoSection";
+import FooterSection from "../components/home/FooterSection";
 
 
 const HomePage = () => {
@@ -10,6 +11,7 @@ const HomePage = () => {
         <HeroSection />
         <ProductSection />
         <PromoSection />
+        <FooterSection />
       </>
     )
   }
