@@ -1,10 +1,11 @@
 import Swal from "sweetalert2";
 import React, { useState, useEffect } from 'react';
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, Container } from 'react-bootstrap';
 
 const UpdateProfilePicture = ({fetchData}) =>{
     const [image, setImage] = useState("");
     const [token, setToken] = useState("");
+
     useEffect(() => {
         const storedToken = localStorage.getItem('token');
         setToken(storedToken);
@@ -73,29 +74,30 @@ const UpdateProfilePicture = ({fetchData}) =>{
     };
 
     return (
-        <div>
-            
-            <Form onSubmit={e=>{handleUpdateProfilePicture(e)}}>
-            {image && (
-                        <Form.Group>
-                            <Form.Label>Selected Image:</Form.Label>
-                            <img src={image} alt="Selected Image" />
-                            <Button variant="danger" type="button" onClick={removeImage}>Remove</Button>
-                        </Form.Group>
-            )}
-                <Form.Group>
-                    <Form.Label>Choose Image:</Form.Label>
-                    <Form.Control
-                        id="custom-file"
-                        type="file"
-                        label="Choose Image"
-                        accept="image/*"
-                        onChange={(e) => convertToBase64(e)}
-                    />
-                </Form.Group>
-                <Button variant="primary" type="submit">Update Profile picture</Button>
-            </Form>
-        </div>
+        <>
+            <Container className="mb-5">
+                <Form onSubmit={e=>{handleUpdateProfilePicture(e)}} className="d-flex flex-column gap-2 align-items-start">
+                {image && (
+                            <Form.Group>
+                                <Form.Label>Selected Image:</Form.Label>
+                                <img src={image} alt="Selected Image" />
+                                <Button variant="danger" type="button" onClick={removeImage}>Remove</Button>
+                            </Form.Group>
+                )}
+                    <Form.Group>
+                        <Form.Label>Choose Image:</Form.Label>
+                        <Form.Control
+                            id="custom-file"
+                            type="file"
+                            label="Choose Image"
+                            accept="image/*"
+                            onChange={(e) => convertToBase64(e)}
+                        />
+                    </Form.Group>
+                    <Button variant="primary" type="submit">Update Profile picture</Button>
+                </Form>
+            </Container>
+        </>
     );
 }
 

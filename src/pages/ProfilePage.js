@@ -5,6 +5,8 @@ import { Navigate } from 'react-router-dom';
 import ResetPassword from "../components/profile/ResetPassword";
 import UpdateProfile from "../components/profile/UpdateProfile";
 import UpdateProfilePicture from "../components/profile/UpdateProfilePicture";
+import Loading from '../components/Loading';
+import { faL } from '@fortawesome/free-solid-svg-icons';
 
 
 export default function Profile() {
@@ -12,6 +14,8 @@ export default function Profile() {
     const { user } = useContext(UserContext);
     const [userDetails, setUserDetails] = useState({});
     const [token, setToken] = useState('');
+    const [isLoading, setIsLoading] = useState(true); // State variable to track loading state
+
 
     useEffect(() => {
         // You can fetch the user's details or token here if needed
@@ -37,6 +41,7 @@ export default function Profile() {
 
             if (response.ok) {
                 setUserDetails(data);
+                setIsLoading(false);
             } else {
                 console.error('Error fetching user details:', data.error || 'Failed to fetch user details');
             }
@@ -46,8 +51,12 @@ export default function Profile() {
     };
     return (
         (user.token === null) ?
-            <Navigate to="/login" />
-            : <>
+            (<Navigate to="/login" />)
+            : 
+            (isLoading) ?
+            ( <Loading /> )
+            :
+            (<>
                 <Row>
                     <Col className="p-5 bg-primary text-white">
                         <h1 className="my-5">Profile</h1>
@@ -76,6 +85,6 @@ export default function Profile() {
                         <UpdateProfilePicture fetchData={fetchUserDetails}/>
                     </Col>
                 </Row>
-            </>
+            </>)
     )
 }

@@ -23,12 +23,6 @@ function ErrorPage() {
           Go back to the <Link to="/" className="text-decoration-none">homepage</Link>
         </p>
       </Container>
-
-      {/* <Container className="text-center border rounded my-5 p-5">
-        <h1>{data.title}</h1>
-        <h4>{data.content}</h4>
-        <Link to={data.destination}>{data.label}</Link>
-      </Container> */}
     </>
   );
 }

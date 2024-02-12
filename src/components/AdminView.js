@@ -3,9 +3,12 @@ import { useState, useEffect } from "react";
 import ArchiveProduct from "./products/ArchiveProduct";
 import ActivateProduct from "./products/ActivateProduct";
 import UpdateProduct from "./products/UpdateProduct";
+import Loading from "./Loading";
 
 const AdminView = ({ productsData, fetchData }) => {
     const [products, setProducts] = useState([]);
+    const [isLoading, setIsLoading] = useState(true); // State variable to track loading state
+
 
     useEffect(() => {
         const productArr = productsData.map((product) => {
@@ -34,27 +37,35 @@ const AdminView = ({ productsData, fetchData }) => {
         });
 
         setProducts(productArr);
+        setIsLoading(false);
     }, [productsData, fetchData]);
 
     return (
         <>
-            <Container>
-                <h1> Admin Dashboard</h1>
-                <Table striped bordered hover responsive>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Description</th>
-                            <th>Price</th>
-                            <th>Availability</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
+            {
+                isLoading ?
+                (<Loading />)
+                :
+                (
+                    <Container>
+                        <h1> Admin Dashboard</h1>
+                        <Table striped bordered hover responsive>
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                    <th>Price</th>
+                                    <th>Availability</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
 
-                    <tbody>{products}</tbody>
-                </Table>
-            </Container>
+                            <tbody>{products}</tbody>
+                        </Table>
+                    </Container>
+                )
+            }
         </>
     );
 }

@@ -73,50 +73,6 @@ export default function ProductView() {
 
     return (
         <>
-            {/* <Container className="mt-5">
-                <Row>
-                    <Col lg={{ span: 6, offset: 3 }}>
-                        <Card>
-                            <Card.Body className="text-center">
-                                <Card.Title>{name}</Card.Title>
-                                <Card.Subtitle>Description:</Card.Subtitle>
-                                <Card.Text>{description}</Card.Text>
-                                <Card.Subtitle>Price:</Card.Subtitle>
-                                <Card.Text>PhP {price}</Card.Text>
-                                <Card.Subtitle>Product Details</Card.Subtitle>
-                                <Card.Text>Additional product details here.</Card.Text>
-                                {user.id !== null ? (
-                                    <>
-                                        <label htmlFor="quantity">Quantity:</label>
-                                        <input
-                                            type="number"
-                                            id="quantity"
-                                            name="quantity"
-                                            min="1"
-                                            max="10"
-                                            step="1"
-                                            value={quantity}
-                                            onChange={handleQuantityChange}
-                                        />
-                                        <Button variant="primary" onClick={() => purchase(productId)}>
-                                            {<FontAwesomeIcon icon={faCartPlus} />}
-                                        </Button>
-                                    </>
-
-                                ) : (
-                                    <>
-                                        <Link className="btn-danger btn" to="/login">
-                                            Login to Purchase
-                                        </Link>
-                                    </>
-
-                                )}
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                </Row>
-            </Container> */}
-
             {
                 isLoading ? (
                     <Loading />
