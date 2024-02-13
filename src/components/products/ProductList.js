@@ -28,7 +28,7 @@ const ProductList = ({productsData, fetchData}) => {
                 {productList.length > 0 ? (
                     <>{productList}</>
                 ) : (
-                    <p>No products found.</p>
+                    <Loading/>
                 )}
             </>
             )}
