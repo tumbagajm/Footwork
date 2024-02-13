@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+# Footwork - E-Commerce Capstone Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to our Footwork E-Commerce Capstone Project! This project represents the culmination of the collaborative efforts of two students: one dedicated to crafting an intuitive and visually appealing UI/UX, and the other focused on implementing robust functionality to ensure a seamless online shopping experience.
 
-## Available Scripts
+## Team Members
 
-In the project directory, you can run:
+- **UI/UX Developer:** Renz Carlo Glorioso
+- **Functionality Developer:** John Michael Tumbaga
 
-### `npm start`
+## Project Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Our Footwork E-Commerce Capstone Project aims to create a fully functional and user-friendly online shopping platform for footwear. The collaboration between UI/UX Enhancement and Functionality Implementation ensures a harmonious integration of design and functionality, providing users with an enjoyable and efficient shopping experience.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+### UI/UX Enhancement (by Renz)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Product Pages:** Visually appealing product pages with detailed information, images, and a user-friendly layout.
+- **Responsive Design:** A mobile-friendly and responsive interface for users to access the platform from various devices.
+- **Intuitive Navigation:** Easy-to-use navigation menus and user interfaces for a smooth browsing experience.
 
-### `npm run build`
+### Functionality Implementation (by JM)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **User Authentication:** This was made by *both students* during their capstone 2 project. Secure user authentication and authorization mechanisms to protect user data and ensure a safe login experience.
+- **Product Management:** Efficient handling of product data, including CRUD operations for adding, updating, and deleting products.
+- **Shopping Cart Functionality:** Implementation of a shopping cart system to allow users to add and manage items before checkout.
+- **Order Processing:** Backend logic to process and manage orders, ensuring accurate transactions and inventory management.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Technologies Used
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **UI/UX:** React.js, JSX, JavaScript
+- **Functionality:** Express.js, Node.js, Fetch API
+- **Database:** MongoDB
+- **Authentication:** JSON Web Tokens (JWT)
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Unfinished Project Notice
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Note: This project is currently in development and may contain bugs or incomplete features.**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+As of now, both students have made significant progress, but this project is not considered feature-complete. Users may encounter unexpected behavior, errors caused by null elements, or missing elements.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Future Development
 
-## Learn More
+While we have achieved a solid foundation for Footwork E-Commerce, there are several features and enhancements we plan to implement in the future:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **Grouping Products by Categories:** Organize products into categories, making it easier for users to navigate and find items of interest.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **Advanced Search Functionality:** Improve the search functionality to allow users to find products more efficiently based on various criteria such us price and categories.
 
-### Code Splitting
+- **User Reviews and Ratings:** Implement a system for users to leave reviews and ratings for products, enhancing the shopping experience with valuable feedback.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- **Checkout Using Stripe API:** Integrate the Stripe API to facilitate secure and seamless online transactions during the checkout process.
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **Enhanced Security Measures:** Strengthen security measures across the application, including data encryption, secure connections, and protection against common vulnerabilities.
