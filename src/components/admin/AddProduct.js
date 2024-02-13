@@ -3,6 +3,7 @@ import { useState, useContext } from "react";
 import Swal from "sweetalert2";
 import { Navigate, useNavigate } from "react-router-dom";
 import UserContext from "../../UserContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const AddProduct = ({ fetchData }) => {
     const navigate = useNavigate();
@@ -80,9 +81,12 @@ const AddProduct = ({ fetchData }) => {
     return (
         user.isAdmin === true ?
             <>
-                <Button variant="primary" onClick={() => setShowModal(true)}>
-                    Add New Product
-                </Button>
+                <div className="d-flex justify-content-end">
+                    <Button variant="primary" onClick={() => setShowModal(true)} className="my-3">
+                        <FontAwesomeIcon icon="fa-solid fa-circle-plus" /> Add New Product
+                    </Button>
+
+                </div>
 
                 <Modal show={showModal} onHide={() => setShowModal(false)}>
                     <Modal.Header closeButton>

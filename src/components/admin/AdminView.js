@@ -69,7 +69,7 @@ const AdminView = ({ productsData, fetchData }) => {
                                                 <button class="nav-link text-dark" id="users-tab" data-bs-toggle="tab" data-bs-target="#users-tab-pane" type="button" role="tab" aria-controls="users-tab-pane" aria-selected="false">Users</button>
                                             </li>
                                             <li class="nav-item" role="presentation">
-                                                <button class="nav-link text-dark" id="orders-tab" data-bs-toggle="tab" data-bs-target="#orders-tab-pane" type="button" role="tab" aria-controls="orders-tab-pane" aria-selected="false">Orders</button>
+                                                <button class="nav-link text-dark" id="orders-tab" data-bs-toggle="tab" data-bs-target="#orders-tab-pane" type="button" role="tab" aria-controls="orders-tab-pane" aria-selected="false">Order History</button>
                                             </li>
                                         </ul>
                                     </Col>
@@ -81,7 +81,7 @@ const AdminView = ({ productsData, fetchData }) => {
                                         <div class="tab-content" id="myTabContent">
                                             <div class="tab-pane fade show active" id="products-tab-pane" role="tabpanel" aria-labelledby="products-tab" tabindex="0">
                                                 <div className="p-3">
-                                                <AddProduct fetchData={fetchData}/>
+                                                <AddProduct fetchData={fetchData} />
                                                     <Table striped bordered hover responsive>
                                                         <thead>
                                                             <tr>
