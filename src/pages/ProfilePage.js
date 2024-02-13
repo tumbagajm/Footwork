@@ -49,6 +49,8 @@ export default function Profile() {
             console.error('Error fetching user details:', error.message);
         }
     };
+
+    console.log(userDetails.image)
     return (
         (user.token === null) ?
             (<Navigate to="/login" />)
@@ -66,7 +68,12 @@ export default function Profile() {
                 </Row>
                 <Row className="p-5 mb-3 d-flex border rounded-4">
                     <Col lg={4} className="mb-4">
-                        <img src={userDetails.image} width={200} height={200} className="p-2  border border-1 rounded-circle" alt="profile-image" />
+                        {
+                            userDetails.image === null || userDetails.image === undefined ?
+                            <img src={"https://cdn.vectorstock.com/i/1000x1000/52/84/default-placeholder-profile-icon-vector-14065284.webp"} width={200} height={200} className="p-2 border border-1 img-fluid rounded-circle" alt="profile-image" />
+                            :
+                            <img src={userDetails.image} width={200} height={200} className="p-2  border border-1 rounded-circle" alt="profile-image" />
+                        }
                     </Col>
                     <Col lg={8}>
                         <Row className="mb-5 justify-content-between"> 

@@ -82,7 +82,7 @@ const AddProduct = ({ fetchData }) => {
         user.isAdmin === true ?
             <>
                 <div className="d-flex justify-content-end">
-                    <Button variant="primary" onClick={() => setShowModal(true)} className="my-3">
+                    <Button variant="success" onClick={() => setShowModal(true)} className="my-3">
                         <FontAwesomeIcon icon="fa-solid fa-circle-plus" /> Add New Product
                     </Button>
 

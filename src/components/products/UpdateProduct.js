@@ -81,8 +81,8 @@ const UpdateProduct = ({ product, fetchData }) => {
 
     return (
         <>
-            <Button variant="primary" size="sm" onClick={() => openEdit(product)}>
-                Edit
+            <Button variant="secondary" size="sm" onClick={() => openEdit(product)}>
+                <i class="fa-solid fa-pen-to-square"></i>
             </Button>
 
             <Modal show={showEdit} onHide={closeEdit}>
