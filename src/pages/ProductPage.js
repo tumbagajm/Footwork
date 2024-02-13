@@ -22,16 +22,18 @@ const ProductPage = () => {
         })
         .then((res) => res.json())
         .then((data) => {
-            const productArr = data.map((product) => {
-            return product;
-            });
-
-            setProducts(productArr);
+            if(data.length > 0){
+                const productArr = data.map((product) => {
+                    return product;
+                });
+                setProducts(productArr);
+            }
+            else{
+                console.log("No products found.");
+            }
+            
         });
     };
-
-    
-
     useEffect(() => {
         fetchData();
     }, [target]);
