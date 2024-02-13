@@ -27,9 +27,9 @@ Our Footwork E-Commerce Capstone Project aims to create a fully functional and u
 - **Shopping Cart Functionality:** Implementation of a shopping cart system to allow users to add and manage items before checkout.
 - **Order Processing:** Backend logic to process and manage orders, ensuring accurate transactions and inventory management.
 
-## User Features
+### User Features
 
-### User Authentication
+#### User Authentication
 
 - Users can register with their information.
 - Secure login functionality is implemented.
@@ -41,52 +41,52 @@ Our Footwork E-Commerce Capstone Project aims to create a fully functional and u
 - Profile pictures can be added.
 - Admins can view and manage all users.
 
-### Password Reset
+#### Password Reset
 
 - Users can reset their passwords through a secure process.
 
-### User Roles
+#### User Roles
 
 - Admins have special privileges to manage users and access sensitive information.
 - Regular users can manage their profiles and orders.
 
-## Product Features
+### Product Features
 
-### Product Addition
+#### Product Addition
 
 - Products can be added with details such as name, description, price, and a photo.
 
-### Product Archiving and Activation
+#### Product Archiving and Activation
 
 - Admins can archive and activate products.
 
-### Product Retrieval
+#### Product Retrieval
 
 - Admins can retrieve a list of all products.
 - Regular users can access an active product list.
 
-### Product Search
+#### Product Search
 
 - Users can search for products by name.
 
-## Shopping Cart Features
+### Shopping Cart Features
 
-### Adding Products to Cart
+#### Adding Products to Cart
 
 - Users can add products to their shopping cart.
 
-### Displaying User's Cart
+#### Displaying User's Cart
 
 - Users can view the contents of their shopping cart.
 
-## Order Processing Features
+### Order Processing Features
 
-### Checkout
+#### Checkout
 
 - Users can proceed to checkout from their shopping cart.
 - Confirmation and payment steps are implemented.
 
-### Order History
+#### Order History
 
 - Admins can view a comprehensive list of all orders.
 - Users can access their order history.
