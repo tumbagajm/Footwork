@@ -23,9 +23,73 @@ Our Footwork E-Commerce Capstone Project aims to create a fully functional and u
 ### Functionality Implementation (by JM)
 
 - **User Authentication:** This was made by *both students* during their capstone 2 project. Secure user authentication and authorization mechanisms to protect user data and ensure a safe login experience.
-- - **Product Management:** Initially, both students contributed to the backend development for product management. However, as the project progressed, Renz shifted focus to the design aspects, while JM continued updating the backend code and ensuring its seamless integration with the frontend.
+- **Product Management:** Initially, both students contributed to the backend development for product management. However, as the project progressed, Renz shifted focus to the design aspects, while JM continued updating the backend code and ensuring its seamless integration with the frontend.
 - **Shopping Cart Functionality:** Implementation of a shopping cart system to allow users to add and manage items before checkout.
 - **Order Processing:** Backend logic to process and manage orders, ensuring accurate transactions and inventory management.
+
+## User Features
+
+### User Authentication
+
+- Users can register with their information.
+- Secure login functionality is implemented.
+- Password reset functionality is available.
+
+### Profile Management
+
+- Users can update their profiles.
+- Profile pictures can be added.
+- Admins can view and manage all users.
+
+### Password Reset
+
+- Users can reset their passwords through a secure process.
+
+### User Roles
+
+- Admins have special privileges to manage users and access sensitive information.
+- Regular users can manage their profiles and orders.
+
+## Product Features
+
+### Product Addition
+
+- Products can be added with details such as name, description, price, and a photo.
+
+### Product Archiving and Activation
+
+- Admins can archive and activate products.
+
+### Product Retrieval
+
+- Admins can retrieve a list of all products.
+- Regular users can access an active product list.
+
+### Product Search
+
+- Users can search for products by name.
+
+## Shopping Cart Features
+
+### Adding Products to Cart
+
+- Users can add products to their shopping cart.
+
+### Displaying User's Cart
+
+- Users can view the contents of their shopping cart.
+
+## Order Processing Features
+
+### Checkout
+
+- Users can proceed to checkout from their shopping cart.
+- Confirmation and payment steps are implemented.
+
+### Order History
+
+- Admins can view a comprehensive list of all orders.
+- Users can access their order history.
 
 ## Technologies Used
 
