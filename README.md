@@ -22,7 +22,7 @@ Our Footwork E-Commerce Capstone Project aims to create a fully functional and u
 ### Functionality Implementation (by JM)
 
 - **User Authentication:** This was made by *both students* during their capstone 2 project. Secure user authentication and authorization mechanisms to protect user data and ensure a safe login experience.
-- **Product Management:** Efficient handling of product data, including CRUD operations for adding, updating, and deleting products.
+- - **Product Management:** Initially, both students contributed to the backend development for product management. However, as the project progressed, Renz shifted focus to the design aspects, while JM continued updating the backend code and ensuring its seamless integration with the frontend.
 - **Shopping Cart Functionality:** Implementation of a shopping cart system to allow users to add and manage items before checkout.
 - **Order Processing:** Backend logic to process and manage orders, ensuring accurate transactions and inventory management.
 
