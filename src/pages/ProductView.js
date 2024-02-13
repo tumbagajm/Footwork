@@ -14,6 +14,7 @@ export default function ProductView() {
     const [price, setPrice] = useState(0);
     const [quantity, setQuantity] = useState(1);
     const [isLoading, setIsloading] = useState(true);
+    const [images, setImages] = useState([]);
     const navigate = useNavigate();
     // retrieve the product id in the params/url -> :productId
     const { productId } = useParams();
@@ -28,8 +29,8 @@ export default function ProductView() {
                 setName(data.data.name);
                 setDescription(data.data.description);
                 setPrice(data.data.price);
+                setImages(data.data.images);
                 setIsloading(false);
-
             });
     });
     const handleQuantityChange = (e) => {
@@ -89,7 +90,12 @@ export default function ProductView() {
                                     </Row>
                                     <Row>
                                         <Col lg={6} className="mb-4">
-                                            <img src={"https://placehold.co/400x400"} className="product_img rounded-4" />
+                                            {
+                                                images.length === 0 ? 
+                                                <img src={"https://placehold.co/400x400"} className="product_img rounded-4" />
+                                                :
+                                                <img src={images[0]} className="product_img rounded-4" />
+                                            }
                                         </Col>
                                         <Col lg={6} className="mb-4 d-flex flex-column gap-4">
                                             <div>
