@@ -53,3 +53,25 @@ While we have achieved a solid foundation for Footwork E-Commerce, there are sev
 - **Checkout Using Stripe API:** Integrate the Stripe API to facilitate secure and seamless online transactions during the checkout process.
 
 - **Enhanced Security Measures:** Strengthen security measures across the application, including data encryption, secure connections, and protection against common vulnerabilities.
+
+
+## Viewing the Project in Your Browser
+
+To view the Footwork E-Commerce Capstone Project in your browser, follow these instructions:
+
+### 1. Clone the Repository
+
+```bash
+git clone git@ec2-54-147-90-61.compute-1.amazonaws.com:B362/b362-csp3-glorioso-tumbaga.git
+```
+
+### 2. Install dependencies
+```bash
+cd b362-csp3-glorioso-tumbaga
+npm install
+```
+
+### 3. Run the Application
+```bash
+npm start
+```
