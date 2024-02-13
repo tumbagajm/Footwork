@@ -7,6 +7,7 @@ Welcome to our Footwork E-Commerce Capstone Project! This project represents the
 - **UI/UX Developer:** Renz Carlo Glorioso
 - **Functionality Developer:** John Michael Tumbaga
 
+
 ## Project Overview
 
 Our Footwork E-Commerce Capstone Project aims to create a fully functional and user-friendly online shopping platform for footwear. The collaboration between UI/UX Enhancement and Functionality Implementation ensures a harmonious integration of design and functionality, providing users with an enjoyable and efficient shopping experience.
@@ -75,3 +76,13 @@ npm install
 ```bash
 npm start
 ```
+
+### User Credentials
+
+- Admin User
+  - email: **admin@email.com**
+  - password: **admin123**
+- Dummy Customer
+  - email: **customer@mail.com**
+  - password: **customer123**
+  
