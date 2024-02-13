@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import MakeAdmin from "./MakeAdmin";
+import { Container, Row, Col, Table } from 'react-bootstrap';
 
 const UserList = () => {
     const [users, setUsers] = useState([]);
@@ -40,8 +41,8 @@ const UserList = () => {
     };
 
     return (
-        <div>
-            <ul>
+        <>
+            <ul className="d-none">
                 {users.map(user => (
                     <li key={user._id}>
                         <strong>Name:</strong> {user.firstName} {user.lastName}<br />
@@ -56,7 +57,41 @@ const UserList = () => {
                     </li>
                 ))}
             </ul>
-        </div>
+
+            <Container className="mt-3">
+                <Row>
+                    <Col>
+                        <Table striped bordered hover responsive>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Mobile Number</th>
+                                    <th>Role</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                {users.map((user) => (
+                                    <tr key={user._id}>
+                                        <td>{user.firstName + " " + user.lastName}</td>
+                                        <td>{user.email}</td>
+                                        <td>{user.mobileNo}</td>
+                                        <td>
+                                            {user.isAdmin ? (
+                                                <p>Admin</p>
+                                            ) : (
+                                                <MakeAdmin userId={user._id} updateUserList = {updateUserList}/>
+                                            )}
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </Table>
+                    </Col>
+                </Row>
+            </Container>
+        </>
     );
 };
 

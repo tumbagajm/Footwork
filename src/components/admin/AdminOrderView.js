@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Loading from "../Loading";
+import { Container, Row, Col, Table } from 'react-bootstrap';
 
 const UserOrders = () => {
     const [userOrders, setUserOrders] = useState([]);
@@ -35,31 +36,72 @@ const UserOrders = () => {
 
     return (
         <div>
-            <h2>User Orders</h2>
             {loading ? (
                 <Loading/>
             ) : userOrders.length === 0 ? (
                 <p>No orders found.</p>
             ) : (
-                <ul>
-                    {userOrders.map((order) => (
-                        <li key={order._id}>
-                            <p>Order ID: {order._id}</p>
-                            <p>Total Price: {order.totalPrice}</p>
-                            <p>Status: {order.status}</p>
-                            <p>Ordered On: {new Date(order.orderedOn).toLocaleString()}</p>
-                            <ul>
-                                {order.productsOrdered.map((product) => (
-                                    <li key={product._id}>
-                                        <p>Product Name: {product.productId.name}</p>
-                                        <p>Quantity: {product.quantity}</p>
-                                        <p>Subtotal: {product.subtotal}</p>
-                                    </li>
-                                ))}
-                            </ul>
-                        </li>
-                    ))}
-                </ul>
+                <>
+                    {/* <ul className="d-none">
+                        {userOrders.map((order) => (
+                            <li key={order._id}>
+                                <p>Order ID: {order._id}</p>
+                                <p>Total Price: {order.totalPrice}</p>
+                                <p>Status: {order.status}</p>
+                                <p>Ordered On: {new Date(order.orderedOn).toLocaleString()}</p>
+                                <ul>
+                                    {order.productsOrdered.map((product) => (
+                                        <li key={product._id}>
+                                            <p>Product Name: {product.productId.name}</p>
+                                            <p>Quantity: {product.quantity}</p>
+                                            <p>Subtotal: {product.subtotal}</p>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </li>
+                        ))}
+                    </ul> */}
+
+                    <Container className="mt-3">
+                        <Row>
+                            <Col>
+                                <Table striped bordered hover responsive>
+                                    <thead>
+                                        <tr>
+                                            <th>Order ID</th>
+                                            <th>Total Price</th>
+                                            <th>Status</th>
+                                            <th>Ordered On</th>
+                                            <th>Order Details</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        {userOrders.map((order) => (
+                                            <tr key={order._id}>
+                                                <td>{order._id}</td>
+                                                <td>{order.totalPrice}</td>
+                                                <td>{order.status}</td>
+                                                <td>{new Date(order.orderedOn).toLocaleString()}</td>
+                                                <td>
+                                                    <ul>
+                                                        {order.productsOrdered.map((product) => (
+                                                            <li key={product._id}>
+                                                                <p>Product Name: {product.productId.name}</p>
+                                                                <p>Quantity: {product.quantity}</p>
+                                                                <p>Subtotal: {product.subtotal}</p>
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </Table>
+                            </Col>
+                        </Row>
+                    </Container>
+                </>
             )}
         </div>
     );
