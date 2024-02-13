@@ -22,6 +22,7 @@ const AppNavBar = () => {
                             Foot<span>Work.</span>
                         </Navbar.Brand>
                         <div className="d-flex gap-3 fs-5">
+                            <Nav.Link as={NavLink} to="/">Home</Nav.Link>
                             <Nav.Link as={NavLink} to="/products">Products</Nav.Link>
                             <Nav.Link as={NavLink} to="/about">About</Nav.Link>
                             <Nav.Link as={NavLink} to="/contact">Contact Us</Nav.Link>

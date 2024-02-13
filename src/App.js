@@ -10,6 +10,8 @@ import ProductView from "./pages/ProductView";
 import ProfilePage from "./pages/ProfilePage";
 import CartPage from "./pages/CartPage";
 import OrderPage from "./pages/OrderPage";
+import AboutMePage from "./pages/AboutMePage";
+import ContactPage from "./pages/ContactPage";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -60,6 +62,8 @@ function App() {
           <Route element={<ProfilePage/>} path="/profile"/>
           <Route element={<CartPage/>} path="/cart"/>
           <Route element={<OrderPage/>} path="/order"/>
+          <Route element={<AboutMePage/>} path="/about"/>
+          <Route element={<ContactPage/>} path="/contact"/>
         </Routes>
       </Router>
     </UserProvider>
