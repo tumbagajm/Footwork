@@ -36,9 +36,14 @@ const Cart = () => {
         return <Loading/>;
     }
 
+    console.log(cart);
+
     return (
         <>  
             <Col lg={7}>
+                {cart.cartItems.length === 0 ?
+                <p>No products found. <i class="fa-regular fa-face-frown"></i></p>
+                :
                 <ul className="d-flex flex-column gap-5 list-unstyled">
                     {cart.cartItems.map((item) => (
                         <li key={item._id} className="d-flex p-2 gap-5 border-bottom">
@@ -58,6 +63,7 @@ const Cart = () => {
                         </li>
                     ))}
                 </ul>
+                }
             </Col>
             <Col lg={5}>
                 <div className="d-flex flex-column gap-3 p-3 p-md-5 bg-light border rounded-4 sticky-top">

@@ -1,4 +1,5 @@
 import { Container, Row, Col } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const FooterSection = () => {
     const date = new Date();
@@ -24,8 +25,13 @@ const FooterSection = () => {
                         <p className="text-secondary">hello@footwork.com</p>
                         <p className="text-secondary">Footwork, 2023</p>
                     </Col>
-                    <Col md={6} className="d-flex justify-content-end align-items-start">
-                        
+                    <Col md={6} className="d-flex justify-content-end align-items-center">
+                        <div className="d-flex gap-2 align-items-center fs-2">
+                            <i class="fa-brands fa-square-facebook"></i>
+                            <i class="fa-brands fa-square-instagram"></i>
+                            <i class="fa-brands fa-square-x-twitter"></i>
+                            <i class="fa-brands fa-linkedin"></i>
+                        </div>
                     </Col>
                 </Row>
                 <Row className="py-3 text-secondary">

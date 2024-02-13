@@ -39,7 +39,7 @@ const UserOrders = () => {
             {loading ? (
                 <Loading/>
             ) : userOrders.length === 0 ? (
-                <p>No orders found.</p>
+                <p>No orders found. <i class="fa-regular fa-face-frown"></i></p>
             ) : (
                 <ul>
                     {userOrders.map((order) => (
