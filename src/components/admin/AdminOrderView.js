@@ -69,6 +69,7 @@ const UserOrders = () => {
                                     <thead>
                                         <tr>
                                             <th>Order ID</th>
+                                            <th>User</th>
                                             <th>Total Price</th>
                                             <th>Status</th>
                                             <th>Ordered On</th>
@@ -80,6 +81,7 @@ const UserOrders = () => {
                                         {userOrders.map((order) => (
                                             <tr key={order._id}>
                                                 <td>{order._id}</td>
+                                                <td>{order.userId.firstName} {order.userId.lastName}</td>
                                                 <td>{order.totalPrice}</td>
                                                 <td>{order.status}</td>
                                                 <td>{new Date(order.orderedOn).toLocaleString()}</td>
