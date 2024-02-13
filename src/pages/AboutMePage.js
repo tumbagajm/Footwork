@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Row, Col, Image } from 'react-bootstrap';
 
 function AboutMePage() {
+  document.title = "About";
   return (
     <Container className="mt-5">
       <Row>

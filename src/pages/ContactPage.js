@@ -2,6 +2,8 @@ import React from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 
 function ContactPage() {
+  document.title = "Contact";
+  
   return (
     <Container className="mt-5">
       <Row>
