@@ -51,7 +51,7 @@ const UserOrders = () => {
                             <ul>
                                 {order.productsOrdered.map((product) => (
                                     <li key={product._id}>
-                                        <p>Product Name: {product.name}</p>
+                                        <p>Product Name: {product.productId.name}</p>
                                         <p>Quantity: {product.quantity}</p>
                                         <p>Subtotal: {product.subtotal}</p>
                                     </li>
