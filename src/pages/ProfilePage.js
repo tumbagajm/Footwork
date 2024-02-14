@@ -30,7 +30,7 @@ export default function Profile() {
 
     const fetchUserDetails = async (token) => {
         try {
-            const response = await fetch(`${process.env.REACT_APP_API_URL}/users/details`, {
+            const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/users/details`, {
                 method: 'GET',
                 headers: {
                     Authorization: `Bearer ${token}`,

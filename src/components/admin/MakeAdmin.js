@@ -6,7 +6,7 @@ export default function MakeAdmin({ userId, updateUserList }) {
     const [showModal, setShowModal] = useState(false);
 
     const makeAdmin = () => {
-        fetch(`${process.env.REACT_APP_API_URL}/users/${userId}/set-as-admin`, {
+        fetch(`${process.env.REACT_APP_API_BASE_URL}/users/${userId}/set-as-admin`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",

@@ -6,7 +6,7 @@ const RemoveFromCart = ({cartId}) => {
     const [showRemoveModal, setShowRemoveModal] = useState(false);
 
     const removeProductFromCart = () => {
-        fetch(`${process.env.REACT_APP_API_URL}/carts/${cartId}/remove-from-cart`, {
+        fetch(`${process.env.REACT_APP_API_BASE_URL}/carts/${cartId}/remove-from-cart`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",

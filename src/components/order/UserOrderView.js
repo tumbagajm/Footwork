@@ -9,7 +9,7 @@ const UserOrders = () => {
     useEffect(() => {
         const fetchUserOrders = async () => {
             try {
-                const response = await fetch(`${process.env.REACT_APP_API_URL}/orders/my-orders`, {
+                const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/orders/my-orders`, {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",

@@ -12,7 +12,7 @@ const Cart = () => {
     useEffect(() => {
         const fetchCartData = async () => {
             try {
-                const response = await fetch(`${process.env.REACT_APP_API_URL}/carts/get-cart`, {
+                const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/carts/get-cart`, {
                     method: 'GET',
                     headers: {
                         'Authorization': `Bearer ${localStorage.getItem("token")}`,

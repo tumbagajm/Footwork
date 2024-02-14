@@ -7,7 +7,7 @@ const UserList = () => {
 
     useEffect(() => {
         // Fetch data from your API endpoint
-        fetch(`${process.env.REACT_APP_API_URL}/users/get-all-users`, {
+        fetch(`${process.env.REACT_APP_API_BASE_URL}/users/get-all-users`, {
             method: "GET",
             headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         })
@@ -27,7 +27,7 @@ const UserList = () => {
 
     const updateUserList = () => {
         // Fetch updated user data after making someone an admin
-        fetch(`${process.env.REACT_APP_API_URL}/users/get-all-users`, {
+        fetch(`${process.env.REACT_APP_API_BASE_URL}/users/get-all-users`, {
             method: "GET",
             headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         })

@@ -6,7 +6,7 @@ export default function ArchiveProduct({ productId, fetchData }) {
     const [showArchive, setShowArchive] = useState(false);
 
     const archiveProduct = () => {
-        fetch(`${process.env.REACT_APP_API_URL}/products/${productId}/archive`, {
+        fetch(`${process.env.REACT_APP_API_BASE_URL}/products/${productId}/archive`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",

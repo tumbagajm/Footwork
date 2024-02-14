@@ -6,7 +6,7 @@ export default function ActivateProduct({ productId, fetchData }) {
     const [showActivate, setShowActivate] = useState(false);
 
     const activateProduct = () => {
-        fetch(`${process.env.REACT_APP_API_URL}/products/${productId}/activate`, {
+        fetch(`${process.env.REACT_APP_API_BASE_URL}/products/${productId}/activate`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
