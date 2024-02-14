@@ -20,7 +20,7 @@ export default function ProductView() {
     const { productId } = useParams();
 
     useEffect(() => {
-        fetch(`${process.env.REACT_APP_API_URL}/products/${productId}`, {
+        fetch(`${process.env.REACT_APP_API_BASE_URL}/products/${productId}`, {
             method: "GET",
             headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
         })
@@ -41,7 +41,7 @@ export default function ProductView() {
 
 
     const purchase = () => {
-        fetch(`${process.env.REACT_APP_API_URL}/carts/add-to-cart`, {
+        fetch(`${process.env.REACT_APP_API_BASE_URL}/carts/add-to-cart`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

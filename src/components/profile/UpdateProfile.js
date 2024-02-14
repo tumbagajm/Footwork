@@ -17,7 +17,7 @@ const UpdateProfile = ({fetchData}) => {
         e.preventDefault();
 
         try {
-            const response = await fetch(`${process.env.REACT_APP_API_URL}/users/update-profile`, {
+            const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/users/update-profile`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',

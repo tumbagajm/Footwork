@@ -14,7 +14,7 @@ const UpdateProduct = ({ product, fetchData }) => {
     const openEdit = (productId) => {
         setShowEdit(true);
 
-        fetch(`${process.env.REACT_APP_API_URL}/products/${productId}`, {
+        fetch(`${process.env.REACT_APP_API_BASE_URL}/products/${productId}`, {
             method:"GET",
             headers: {
                 "Content-Type": "application/json",
@@ -40,7 +40,7 @@ const UpdateProduct = ({ product, fetchData }) => {
     const editProduct = (e, productId) => {
         e.preventDefault();
 
-        fetch(`${process.env.REACT_APP_API_URL}/products/${productId}/update`, {
+        fetch(`${process.env.REACT_APP_API_BASE_URL}/products/${productId}/update`, {
         method: "PATCH",
         headers: {
             "Content-Type": "application/json",

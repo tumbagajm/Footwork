@@ -27,7 +27,7 @@ const ProductSearch = ({ fetchData, productsData }) => {
         setSearchQuery(event.target.value);
 
         try {
-            const response = await fetch(`${process.env.REACT_APP_API_URL}/products/searchByName`, {
+            const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/products/searchByName`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

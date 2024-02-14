@@ -10,7 +10,7 @@ const ProductSection = () => {
     const [products, setProducts] = useState([]);
     const [isLoading, setIsLoading] = useState(true); // State variable to track loading state
 
-    const url = `${process.env.REACT_APP_API_URL}/products/`;
+    const url = `${process.env.REACT_APP_API_BASE_URL}/products/`;
     const options = {
         method: "GET",
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },

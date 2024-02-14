@@ -37,7 +37,7 @@ const UpdateProfilePicture = ({fetchData}) =>{
     const handleUpdateProfilePicture = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch(`${process.env.REACT_APP_API_URL}/users/update-profile-picture`, {
+            const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/users/update-profile-picture`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',

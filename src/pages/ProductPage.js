@@ -16,7 +16,7 @@ const ProductPage = () => {
 
     const fetchData = () => {
         // get all active courses
-        fetch(`${process.env.REACT_APP_API_URL}/products/${target}`, {
+        fetch(`${process.env.REACT_APP_API_BASE_URL}/products/${target}`, {
         method: "GET",
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         })
