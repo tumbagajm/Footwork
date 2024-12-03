@@ -1,7 +1,6 @@
 import ProductCard from './ProductCard';
 import { useEffect, useState, } from 'react';
 import { Col, Spinner } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import Loading from '../Loading';
 
 const ProductList = ({productsData, fetchData}) => {

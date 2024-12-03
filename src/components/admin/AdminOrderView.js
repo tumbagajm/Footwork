@@ -42,26 +42,6 @@ const UserOrders = () => {
                 <p>No orders found.</p>
             ) : (
                 <>
-                    {/* <ul className="d-none">
-                        {userOrders.map((order) => (
-                            <li key={order._id}>
-                                <p>Order ID: {order._id}</p>
-                                <p>Total Price: {order.totalPrice}</p>
-                                <p>Status: {order.status}</p>
-                                <p>Ordered On: {new Date(order.orderedOn).toLocaleString()}</p>
-                                <ul>
-                                    {order.productsOrdered.map((product) => (
-                                        <li key={product._id}>
-                                            <p>Product Name: {product.productId.name}</p>
-                                            <p>Quantity: {product.quantity}</p>
-                                            <p>Subtotal: {product.subtotal}</p>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </li>
-                        ))}
-                    </ul> */}
-
                     <Container className="mt-3">
                         <Row>
                             <Col>

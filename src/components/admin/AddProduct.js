@@ -141,46 +141,6 @@ const AddProduct = ({ fetchData }) => {
                     </Modal.Footer>
                 </Modal>
 
-                {/* <h1 className="my-5 text-center">Add Product</h1>
-                <Form onSubmit={e => createProduct(e)}>
-                    <Form.Group>
-                        <Form.Label>Name:</Form.Label>
-                        <Form.Control type="text" placeholder="Enter Name" required value={name} onChange={e => { setName(e.target.value) }} />
-                    </Form.Group>
-                    <Form.Group>
-                        <Form.Label>Description:</Form.Label>
-                        <Form.Control type="text" placeholder="Enter Description" required value={description} onChange={e => { setDescription(e.target.value) }} />
-                    </Form.Group>
-                    <Form.Group>
-                        <Form.Label>Price:</Form.Label>
-                        <Form.Control type="number" placeholder="Enter Price" required value={price} onChange={e => { setPrice(e.target.value) }} />
-                    </Form.Group>
-                    <div>
-                        {images.map((image, index) => (
-                            <div key={index}>
-                                <Form.Group>
-                                    <Form.Label>{`Image ${index + 1}:`}</Form.Label>
-                                    <img src={image} alt={`Image ${index + 1}`} />
-                                    <Button variant="danger" onClick={() => removeImage(index)}>Remove</Button>
-                                </Form.Group>
-                            </div>
-                        ))}
-
-                        <Form.Group>
-                            <Form.Label>Choose Images:</Form.Label>
-                            <Form.Control
-                                id="custom-files"
-                                type="file"
-                                label="Choose Images"
-                                accept="image/*"
-                                multiple
-                                onChange={(e) => convertToBase64(e)}
-                            />
-                        </Form.Group>
-                    </div>
-                    <Button variant="primary" type="submit" className="my-5">Submit</Button>
-                </Form> */}
-
             </>
             :
             <Navigate to="/" />

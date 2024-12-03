@@ -1,7 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import { Container, Card, Button, Row, Col } from "react-bootstrap";
 import { useParams, Link, useNavigate } from "react-router-dom";
-import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import UserContext from "../UserContext";
 import Swal from "sweetalert2";
@@ -54,7 +53,7 @@ export default function ProductView() {
         })
             .then((res) => res.json())
             .then((data) => {
-                if (data.message) {
+                if (data.isSuccess) {
                     Swal.fire({
                         title: "Added to cart",
                         icon: "success",
